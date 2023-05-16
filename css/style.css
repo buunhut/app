@@ -287,6 +287,7 @@ main p {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all 0.1s;
     z-index: 3;
+    overflow-y: scroll;
   }
   .mainMenu .menuItem .menuItemSmall {
     display: flex;
@@ -316,31 +317,41 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .nhap:hover {
-    height: 220px;
+    /* height: 220px; */
+  }
+  .mainMenu .menuItem .nhap:hover .dropdown {
+    /* height: 220px; */
+    display: none;
   }
 
   .mainMenu .menuItem .xuat {
     height: auto;
     display: block;
   }
-  .mainMenu .menuItem .xuat:hover {
-    height: 220px;
+  .mainMenu .menuItem .xuat:hover .dropdown {
+    /* height: 220px; */
+    display: none;
+
   }
 
   .mainMenu .menuItem .kho {
     height: auto;
     display: block;
   }
-  .mainMenu .menuItem .kho:hover {
-    height: 220px;
+  .mainMenu .menuItem .kho:hover .dropdown {
+    /* height: 220px; */
+    display: none;
+
   }
 
   .mainMenu .menuItem .quanly {
     height: auto;
     display: block;
   }
-  .mainMenu .menuItem .quanly:hover {
-    height: 220px;
+  .mainMenu .menuItem .quanly:hover .dropdown {
+    /* height: 220px; */
+    display: none;
+
   }
   .mainMenu .menuItem .dropdown {
     position: absolute;
