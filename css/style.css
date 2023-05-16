@@ -1,0 +1,393 @@
+/* css dùng chung */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+}
+.containerItem{
+  width: 50%;
+  padding: 20px;
+}
+.none {
+  display: none;
+}
+.visibility {
+  visibility: hidden;
+  transition: all 0.1s;
+}
+.fixTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+}
+.active {
+  color: rgb(255, 0, 0) !important;
+}
+/* header */
+.top {
+  height: 40px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.top a {
+  line-height: 40px;
+  color: silver;
+  transition: all 0.3s;
+}
+.top a:hover {
+  color: red;
+}
+.topSmall {
+  display: none;
+}
+
+/* main menu */
+.mainMenu {
+  height: 50px;
+  background-color: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+.mainMenu .menuItem a {
+  font-weight: 600;
+}
+.mainMenu .menuItem i {
+  font-size: 12px;
+  color: white;
+}
+/* nút bar */
+.mainMenu .bar i {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 28px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0;
+}
+/* logo */
+.mainMenu .logo {
+  margin-right: 20px;
+}
+.mainMenu .logo span {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* menu */
+.mainMenu ul li {
+  display: inline-block;
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px;
+}
+.mainMenu .menuItem ul li i {
+  font-size: 22px;
+  margin-right: 10px;
+}
+.mainMenu .menuItem .menuItemSmall i {
+  font-size: 12px;
+}
+.mainMenu ul li a {
+  color: white;
+  position: relative;
+  transition: all 0.1s;
+}
+.mainMenu li a::after {
+  content: "";
+  height: 2px;
+  border: none;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: all 0.2s;
+}
+.mainMenu li:hover a {
+  color: rgb(255, 255, 30);
+}
+.mainMenu li:hover a::after {
+  width: 100%;
+}
+
+/* nhập */
+.mainMenu .nhap {
+  position: relative;
+  cursor: pointer;
+}
+.mainMenu .menuItem .dropdown {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: auto;
+  z-index: 3;
+  transform: translateY(50px);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.mainMenu .menuItem .nhap:hover .dropdown {
+  display: block;
+}
+.mainMenu .menuItem .dropdown li {
+  margin: 5px 0;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  /* border-bottom: 1px solid royalblue; */
+}
+.mainMenu .menuItem .dropdown li a {
+  color: royalblue;
+  font-weight: 500;
+  line-height: 40px;
+  transition: all 0.1s;
+}
+.mainMenu .menuItem .dropdown li a::after {
+  content: "";
+  height: 0;
+  width: 0;
+  /* background-color: red; */
+}
+.mainMenu .menuItem .dropdown li:hover {
+  background-color: royalblue;
+}
+.mainMenu .menuItem .dropdown li:hover a {
+  color: rgb(255, 255, 30);
+}
+/* xuất */
+.mainMenu .xuat {
+  position: relative;
+  cursor: pointer;
+}
+
+.mainMenu .menuItem .xuat:hover .dropdown {
+  display: block;
+}
+
+/* kho */
+.mainMenu .kho {
+  position: relative;
+  cursor: pointer;
+}
+
+.mainMenu .menuItem .kho:hover .dropdown {
+  display: block;
+}
+
+/* quản lý */
+.mainMenu .quanly {
+  position: relative;
+  cursor: pointer;
+}
+
+.mainMenu .menuItem .quanly:hover .dropdown {
+  display: block;
+}
+/* main */
+main {
+  margin: 40px 0;
+}
+main p {
+  padding: 20px 0;
+}
+/* backToTop */
+.toTop {
+  width: 33px;
+  height: 33;
+  text-align: center;
+  line-height: 33px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.6);
+  font-size: 14px;
+  border-radius: 8px;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+}
+
+/* responsive */
+@media screen and (max-width: 992px) {
+  /* css dùng chung */
+  .lockScroll {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+  .heightAuto {
+    height: 100vh !important;
+    overflow-y: scroll;
+  }
+  .height0 {
+    height: 0;
+  }
+  .top {
+    display: none;
+  }
+  .mainMenu .bar {
+    display: block;
+  }
+  .mainMenu .menuItem {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transform: translateY(50px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.1s;
+    z-index: 3;
+  }
+  .mainMenu .menuItem .menuItemSmall {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mainMenu .menuItem ul li {
+    display: block;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.3);
+  }
+  .mainMenu .menuItem ul li i {
+    color: royalblue;
+  }
+  .mainMenu .menuItem ul li a {
+    color: royalblue;
+  }
+  .mainMenu .menuItem ul li a::after {
+    content: "";
+    height: 0;
+  }
+  .mainMenu .menuItem .menuItemSmall i {
+    color: royalblue;
+    font-size: 12px;
+  }
+  .mainMenu .menuItem .nhap {
+    height: auto;
+    display: block;
+  }
+  .mainMenu .menuItem .nhap:hover {
+    height: 220px;
+  }
+
+  .mainMenu .menuItem .xuat {
+    height: auto;
+    display: block;
+  }
+  .mainMenu .menuItem .xuat:hover {
+    height: 220px;
+  }
+
+  .mainMenu .menuItem .kho {
+    height: auto;
+    display: block;
+  }
+  .mainMenu .menuItem .kho:hover {
+    height: 220px;
+  }
+
+  .mainMenu .menuItem .quanly {
+    height: auto;
+    display: block;
+  }
+  .mainMenu .menuItem .quanly:hover {
+    height: 220px;
+  }
+  .mainMenu .menuItem .dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    transform: translateY(50px);
+    display: none;
+    background-color: rgba(250, 255, 0, 0.1);
+    scrol
+  }
+  .mainMenu .menuItem .dropdown ul li {
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 20px;
+    /* border: none; */
+  }
+  .mainMenu .menuItem .dropdown ul li:hover {
+    height: 30px;
+    background-color: royalblue;
+  }
+  .mainMenu .menuItem .dropdown ul li a {
+    line-height: 30px;
+    margin-top: 0;
+  }
+
+  .mainMenu .menuItem .topSmall {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 40px;
+    text-align: center;
+  }
+  .mainMenu .topSmall a {
+    color: white;
+    line-height: 40px;
+  }
+
+  .mainMenu .topSmall a {
+    line-height: 40px;
+    color: silver;
+    font-weight: 300;
+    transition: all 0.3s;
+  }
+  .mainMenu .topSmall a:hover {
+    color: red;
+  }
+
+  /* .overlay{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(65, 105, 225, 0.3);
+    z-index: 1;
+  } */
+}
