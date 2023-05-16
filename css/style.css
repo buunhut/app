@@ -36,9 +36,13 @@ a {
   width: 50%;
   padding: 20px;
 }
+.block{
+  display: block;
+}
 .none {
   display: none;
 }
+
 .visibility {
   visibility: hidden;
   transition: all 0.1s;
@@ -247,11 +251,15 @@ main p {
 
 /* responsive */
 @media screen and (max-width: 992px) {
-  /* css dùng chung */
+  /* css dùng chung */ 
   .lockScroll {
     height: 100vh;
     overflow-y: hidden;
   }
+  .block{
+    display: block !important;
+  }
+  
   .heightAuto {
     height: 100vh !important;
     overflow-y: scroll;
@@ -310,16 +318,13 @@ main p {
   .mainMenu .menuItem .nhap:hover {
     height: 220px;
   }
-  .mainMenu .menuItem .nhap:hover .dropdown {
-    display: block;
-  }
 
   .mainMenu .menuItem .xuat {
     height: auto;
     display: block;
   }
   .mainMenu .menuItem .xuat:hover {
-    height: 0;
+    height: 220px;
   }
 
   .mainMenu .menuItem .kho {
@@ -327,7 +332,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .kho:hover {
-    height: 0;
+    height: 220px;
   }
 
   .mainMenu .menuItem .quanly {
@@ -335,7 +340,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .quanly:hover {
-    height: 0;
+    height: 220px;
   }
   .mainMenu .menuItem .dropdown {
     position: absolute;
@@ -344,8 +349,10 @@ main p {
     height: auto;
     width: 100%;
     transform: translateY(50px);
-    display: none;
+    /* display: block; */
     background-color: rgba(250, 255, 0, 0.1);
+    z-index: 5;
+    transition: all .3s;
   }
   .mainMenu .menuItem .dropdown ul li {
     height: 30px;

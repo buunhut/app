@@ -12,19 +12,22 @@ var clickQuanLy = document.querySelector(".mainMenu .quanly");
 //click nhập hàng
 clickNhapHang.onclick = function(){
   document.querySelector(".nhap").classList.toggle("height220");
-  document.querySelector(".nhap .dropdown").classList.toggle("none");
+  document.querySelector(".nhap .dropdown").classList.toggle("block");
 }
 //click xuất hàng
 clickXuatHang.onclick = function(){
-  alert("Xuat");
+  document.querySelector(".xuat").classList.toggle("height220");
+  document.querySelector(".xuat .dropdown").classList.toggle("block");
 }
 //click kho hàng
 clickKhoHang.onclick = function(){
-  alert("Kho");
+  document.querySelector(".kho").classList.toggle("height220");
+  document.querySelector(".kho .dropdown").classList.toggle("block");
 }
 //click quản lý
 clickQuanLy.onclick = function(){
-  alert("Quản lý");
+  document.querySelector(".quanly").classList.toggle("height220");
+  document.querySelector(".quanly .dropdown").classList.toggle("block");
 }
 // var overlay = document.querySelector(".overlay");
 var myBody = document.querySelector("body");
