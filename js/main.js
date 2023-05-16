@@ -10,25 +10,61 @@ var clickXuatHang = document.querySelector(".mainMenu .xuat");
 var clickKhoHang = document.querySelector(".mainMenu .kho");
 var clickQuanLy = document.querySelector(".mainMenu .quanly");
 //click nhập hàng
-clickNhapHang.onclick = function(){
+clickNhapHang.onclick = function () {
   document.querySelector(".nhap").classList.toggle("height220");
   document.querySelector(".nhap .dropdown").classList.toggle("block");
-}
+
+  document.querySelector(".xuat").classList.remove("height220");
+  document.querySelector(".xuat .dropdown").classList.remove("block");
+
+  document.querySelector(".kho").classList.remove("height220");
+  document.querySelector(".kho .dropdown").classList.remove("block");
+
+  document.querySelector(".quanly").classList.remove("height220");
+  document.querySelector(".quanly .dropdown").classList.remove("block");
+};
 //click xuất hàng
-clickXuatHang.onclick = function(){
+clickXuatHang.onclick = function () {
+  document.querySelector(".nhap").classList.remove("height220");
+  document.querySelector(".nhap .dropdown").classList.remove("block");
+
   document.querySelector(".xuat").classList.toggle("height220");
   document.querySelector(".xuat .dropdown").classList.toggle("block");
-}
+
+  document.querySelector(".kho").classList.remove("height220");
+  document.querySelector(".kho .dropdown").classList.remove("block");
+
+  document.querySelector(".quanly").classList.remove("height220");
+  document.querySelector(".quanly .dropdown").classList.remove("block");
+};
 //click kho hàng
-clickKhoHang.onclick = function(){
+clickKhoHang.onclick = function () {
+  document.querySelector(".nhap").classList.remove("height220");
+  document.querySelector(".nhap .dropdown").classList.remove("block");
+
+  document.querySelector(".xuat").classList.remove("height220");
+  document.querySelector(".xuat .dropdown").classList.remove("block");
+
   document.querySelector(".kho").classList.toggle("height220");
   document.querySelector(".kho .dropdown").classList.toggle("block");
-}
+
+  document.querySelector(".quanly").classList.remove("height220");
+  document.querySelector(".quanly .dropdown").classList.remove("block");
+};
 //click quản lý
-clickQuanLy.onclick = function(){
+clickQuanLy.onclick = function () {
+  document.querySelector(".nhap").classList.remove("height220");
+  document.querySelector(".nhap .dropdown").classList.remove("block");
+
+  document.querySelector(".xuat").classList.remove("height220");
+  document.querySelector(".xuat .dropdown").classList.remove("block");
+
+  document.querySelector(".kho").classList.remove("height220");
+  document.querySelector(".kho .dropdown").classList.remove("block");
+
   document.querySelector(".quanly").classList.toggle("height220");
   document.querySelector(".quanly .dropdown").classList.toggle("block");
-}
+};
 // var overlay = document.querySelector(".overlay");
 var myBody = document.querySelector("body");
 //tạo function bắt resize màn hình, truyền vào tham số breakpoint
@@ -78,12 +114,6 @@ barClose.onclick = function () {
   // overlay.classList.toggle("none");
   myBody.classList.toggle("lockScroll");
 };
-// overlay.onclick = function () {
-//   menu.classList.remove("heightAuto");
-//   menuUl.classList.add("none");
-//   overlay.classList.toggle("none");
-//   myBody.classList.toggle("lockScroll");
-// };
 // backToTop
 var toTop = document.querySelector(".toTop");
 // bắt sự kiện lăn chuột bằng window.onscroll

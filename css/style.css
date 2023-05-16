@@ -20,6 +20,9 @@ input {
   margin: 0;
   padding: 0;
 }
+textarea, input:focus{
+  outline: 1px solid royalblue;
+}
 ul,
 li {
   list-style: none;
@@ -32,11 +35,11 @@ a {
 .container {
   width: 100%;
 }
-.containerItem{
+.containerItem {
   width: 50%;
   padding: 20px;
 }
-.block{
+.block {
   display: block;
 }
 .none {
@@ -142,7 +145,7 @@ a {
   width: 0;
   background-color: white;
   position: absolute;
-  bottom: -3px;
+  bottom: -5px;
   left: 0;
   transition: all 0.2s;
 }
@@ -150,6 +153,9 @@ a {
   color: rgb(255, 255, 30);
 }
 .mainMenu li:hover a::after {
+  width: 100%;
+}
+.mainMenu li a.active::after {
   width: 100%;
 }
 
@@ -190,7 +196,6 @@ a {
   content: "";
   height: 0;
   width: 0;
-  /* background-color: red; */
 }
 .mainMenu .menuItem .dropdown li:hover {
   background-color: royalblue;
@@ -248,18 +253,79 @@ main p {
   right: 5px;
   bottom: 5px;
 }
+/* trang liên hệ */
+.lienHe{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.lienHeItem{
+  width: 50%;
+  padding: 30px;
+}
+.lienHeItem h1{
+  margin-bottom: 10px;
+}
+.lienHeItem iframe{
+  width: 100%;
+}
+.lienHe form input{
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;  
+}
+
+.lienHe form textarea{
+  font-size: 18px;
+  width: 100%;
+  height: 200px;
+  resize: none;
+  padding: 10px
+}
+.lienHe form label{
+  display: block;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+.lienHe form button{
+  font-size: 18px;
+  padding: 15px 20px;
+  color: white;
+  background-color: royalblue;
+  border: none;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.lienHe form button:hover{
+  background-color: rgb(33, 87, 247);
+}
+.lienHe .lienHeItem hr{
+  display: none;
+
+}
+
+
+
+
+
+
 
 /* responsive */
 @media screen and (max-width: 992px) {
-  /* css dùng chung */ 
+  /* css dùng chung */
   .lockScroll {
     height: 100vh;
     overflow-y: hidden;
   }
-  .block{
+  .block {
     display: block !important;
   }
-  
+
   .heightAuto {
     height: 100vh !important;
     overflow-y: scroll;
@@ -267,8 +333,9 @@ main p {
   .height0 {
     height: 0 !important;
   }
+  /* kích thức menu dropdown */
   .height220 {
-    height: 220px !important;
+    height: 260px !important;
   }
   .top {
     display: none;
@@ -316,22 +383,15 @@ main p {
     height: auto;
     display: block;
   }
-  .mainMenu .menuItem .nhap:hover {
-    /* height: 220px; */
-  }
   .mainMenu .menuItem .nhap:hover .dropdown {
-    /* height: 220px; */
     display: none;
   }
-
   .mainMenu .menuItem .xuat {
     height: auto;
     display: block;
   }
   .mainMenu .menuItem .xuat:hover .dropdown {
-    /* height: 220px; */
     display: none;
-
   }
 
   .mainMenu .menuItem .kho {
@@ -339,9 +399,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .kho:hover .dropdown {
-    /* height: 220px; */
     display: none;
-
   }
 
   .mainMenu .menuItem .quanly {
@@ -349,9 +407,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .quanly:hover .dropdown {
-    /* height: 220px; */
     display: none;
-
   }
   .mainMenu .menuItem .dropdown {
     position: absolute;
@@ -360,23 +416,22 @@ main p {
     height: auto;
     width: 100%;
     transform: translateY(50px);
-    /* display: block; */
     background-color: rgba(250, 255, 0, 0.1);
     z-index: 5;
-    transition: all .3s;
+    transition: all 0.3s;
   }
+  /* li của thẻ dropdown */
   .mainMenu .menuItem .dropdown ul li {
-    height: 30px;
-    line-height: 30px;
-    margin: 5px 20px;
-    /* border: none; */
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 20px;
   }
   .mainMenu .menuItem .dropdown ul li:hover {
-    height: 30px;
-    background-color: royalblue;
+    height: 40px;
+    background-color: rgba(65, 105, 225, 0.9);
   }
   .mainMenu .menuItem .dropdown ul li a {
-    line-height: 30px;
+    line-height: 40px;
     margin-top: 0;
   }
 
@@ -402,15 +457,23 @@ main p {
     color: red;
   }
 
-  /* .overlay{
-    position: absolute;
-    top: 50px;
-    right: 0;
-    left: 0;
-    bottom: 0;
+  /* trang liên hệ */
+  .lienHe{
+    display: flex;
+    flex-direction: column;
+  }
+  .lienHe .lienHeItem{
     width: 100%;
-    height: 100%;
-    background-color: rgba(65, 105, 225, 0.3);
-    z-index: 1;
-  } */
+  }
+  .lienHe .lienHeItem hr{
+    display: block;
+    margin-top: 50px;
+    height: 1px;
+    background-color: silver;
+    border: none;
+
+  }
+
+}
+@media screen and (max-width:768px) {
 }
