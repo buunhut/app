@@ -5,6 +5,26 @@ var menu = document.querySelector(".menuItem");
 var menuUl = document.querySelector(".menuItem ul");
 var barOpen = document.querySelector(".bar i:first-child");
 var barClose = document.querySelector(".bar i:last-child");
+var clickNhapHang = document.querySelector(".mainMenu .nhap");
+var clickXuatHang = document.querySelector(".mainMenu .xuat");
+var clickKhoHang = document.querySelector(".mainMenu .kho");
+var clickQuanLy = document.querySelector(".mainMenu .quanly");
+//click nhập hàng
+clickNhapHang.onclick = function(){
+  document.querySelector(".nhap .dropdown").classList.toggle("none");
+}
+//click xuất hàng
+clickXuatHang.onclick = function(){
+  alert("Xuat");
+}
+//click kho hàng
+clickKhoHang.onclick = function(){
+  alert("Kho");
+}
+//click quản lý
+clickQuanLy.onclick = function(){
+  alert("Quản lý");
+}
 // var overlay = document.querySelector(".overlay");
 var myBody = document.querySelector("body");
 //tạo function bắt resize màn hình, truyền vào tham số breakpoint
