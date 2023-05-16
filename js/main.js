@@ -11,6 +11,7 @@ var clickKhoHang = document.querySelector(".mainMenu .kho");
 var clickQuanLy = document.querySelector(".mainMenu .quanly");
 //click nhập hàng
 clickNhapHang.onclick = function(){
+  document.querySelector(".nhap").classList.toggle("height220");
   document.querySelector(".nhap .dropdown").classList.toggle("none");
 }
 //click xuất hàng

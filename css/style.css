@@ -257,7 +257,10 @@ main p {
     overflow-y: scroll;
   }
   .height0 {
-    height: 0;
+    height: 0 !important;
+  }
+  .height220 {
+    height: 220px !important;
   }
   .top {
     display: none;
@@ -307,13 +310,16 @@ main p {
   .mainMenu .menuItem .nhap:hover {
     height: 220px;
   }
+  .mainMenu .menuItem .nhap:hover .dropdown {
+    display: block;
+  }
 
   .mainMenu .menuItem .xuat {
     height: auto;
     display: block;
   }
   .mainMenu .menuItem .xuat:hover {
-    height: 220px;
+    height: 0;
   }
 
   .mainMenu .menuItem .kho {
@@ -321,7 +327,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .kho:hover {
-    height: 220px;
+    height: 0;
   }
 
   .mainMenu .menuItem .quanly {
@@ -329,7 +335,7 @@ main p {
     display: block;
   }
   .mainMenu .menuItem .quanly:hover {
-    height: 220px;
+    height: 0;
   }
   .mainMenu .menuItem .dropdown {
     position: absolute;
@@ -340,7 +346,6 @@ main p {
     transform: translateY(50px);
     display: none;
     background-color: rgba(250, 255, 0, 0.1);
-    scrol
   }
   .mainMenu .menuItem .dropdown ul li {
     height: 30px;
