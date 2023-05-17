@@ -109,65 +109,81 @@
 
     <!-- phần main -->
     <main>
-        <div class="container">
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
+        <div class="container nhanVien">
+            <div class="nhanVienForm">
+                <h2>Thêm nhân viên</h2>
+                <div class="nhanVienBg">
+                    <form action="">
+                        <label for="maNhanVien">Mã nhân viên</label>
+                        <input type="text" id="maNhanVien">
+                        <label for="tenNhanVien">Tên nhân viên</label>
+                        <input type="text" id="tenNhanVien">
+                        <label for="chucVu">Chức vụ</label>
+                        <select name="" id="chucVu">
+                            <option value=""></option>
+                            <option value="Quản lý">Quản lý</option>
+                            <option value="Phục vụ">Phục vụ</option>
+                            <option value="Giao hàng">Giao hàng</option>
+                        </select>
+                        <label for="soDienThoai">Số điện thoại</label>
+                        <input type="text" id="soDienThoai">
+                        <label for="diaChi">Địa chỉ</label>
+                        <input type="text" id="diaChi">
+                        <label for="Ngày vào làm">Ngày vào làm</label>
+                        <input type="date" id="ngayVaoLam">
+                        <label for="mucLuong">Mức lương</label>
+                        <input type="text" id="mucLuong">
+                        <div class="formButton">
+                            <button class="themNhanVien" type="button" onclick="themNhanVien()">
+                                <i class="fa-solid fa-circle-plus"></i> Thêm nhân viên</button>
+                            <button class="capNhatThongTinNhanVien" type="button"
+                                onclick="capNhatThongTinNhanVien()">Cập
+                                nhật thông tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nhanVienList">
+                <h2>Danh sách nhân viên</h2>
+                <div class="nhanVienBg">
+                    <div class="timNhanVien">
+                        <form action="">
+                            <input type="text" id="timNhanVien" placeholder="Tìm nhân viên ...,">
+                        </form>
+                    </div>
+                    <table>
+                        <tr>
+                            <!-- <th>STT</th> -->
+                            <th>MÃ NV</th>
+                            <th>TÊN NHÂN VIÊN</th>
+                            <th>CHỨC VỤ</th>
+                            <th>ĐIỆN THOẠI</th>
+                            <th>ĐỊA CHỈ</th>
+                            <th>NGÀY VÀO</th>
+                            <th>MỨC LƯƠNG</th>
+                            <th>THAO TÁC</th>
+                        </tr>
+                        <tbody id="listNhanVien">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
     <!-- phần footer -->
     <footer>
-
+        <div class="container">
+            <div class="footer">
+                <span>Follow us</span>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="end"><span>© Copyright 2023 by - </span><a href="">cybersoft.edu.vn</a></div>
+        </div>
     </footer>
-    <!-- phần overlay -->
-    <!-- <div class="overlay"></div> -->
     <!-- phần backToTop -->
     <i class="toTop none fa-solid fa-angles-up"></i>
     <!-- link main.js -->

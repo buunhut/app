@@ -109,68 +109,39 @@
 
     <!-- phần main -->
     <main>
-        <div class="container">
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
-            <h1>hello everyone</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam culpa eaque doloremque iusto temporibus
-                harum quod ipsum vitae natus porro itaque incidunt magni non voluptatibus deserunt error neque omnis
-                nobis similique, sequi repellat. Incidunt, ullam quia corrupti porro eos nobis facilis nemo saepe
-                dolores odit, ex, rem eaque ipsa distinctio.</p>
+        <div class="container nhapHang">
+            <div class="nhapHangItem">   
+                <form action="">
+                    <input type="text" id="tenSanPham" placeholder="Tên sản phẩm">
+                    <input type="text" id="soLuong" placeholder="Số lượng">
+                    <input type="text" id="donGia" placeholder="Đơn giá">
+                    <button type="button" onclick="nhapHang()">Nhập hàng</button>
+                </form>
+            </div>
+            <div class="nhapHangItem">   
+                <table>
+                    <tr>
+                        <th>STT</th>
+                        <th>TÊN SẢN PHẨM</th>
+                        <th>SỐ LƯỢNG</th>
+                        <th>ĐƠN GIÁ</th>
+                        <th>THÀNH TIỀN</th>
+                        <th>THAO TÁC</th>
+                    </tr>
+                    <tbody id="tblDanhSachSanPham">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
     <!-- phần footer -->
     <footer>
 
     </footer>
-    <!-- phần overlay -->
-    <!-- <div class="overlay"></div> -->
     <!-- phần backToTop -->
     <i class="toTop none fa-solid fa-angles-up"></i>
     <!-- link main.js -->
+    <script src="./js/nhaphang.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

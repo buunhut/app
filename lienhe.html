@@ -115,12 +115,12 @@
                 <form action="">
                     <input type="text" placeholder="Họ và tên" autofocus maxlength="50">
                     <input type="text" placeholder="Số điện thoại" maxlength="15">
-                    <input type="text" placeholder="Địa chỉ" maxlength="200"> 
+                    <input type="text" placeholder="Địa chỉ" maxlength="200">
                     <label for="noiDungLienHe">Nôi dung liên hệ</label>
                     <textarea name="" id="noiDungLienHe" cols="30" rows="10" maxlength="500">
 
                     </textarea>
-                    <button type="button">
+                    <button type="button" id="guiThongtin" onclick="guiThongtin()">
                         <i class="fa-regular fa-paper-plane"></i>
                         Gửi thông tin
                     </button>
@@ -128,13 +128,25 @@
                 <hr>
             </div>
             <div class="lienHeItem">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5093830308424!2d106.67729837394491!3d10.772243759273097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f21198a62c1%3A0xa091bdb5049e5008!2zMTEyIMSQLiBDYW8gVGjhuq9uZywgUGjGsOG7nW5nIDQsIFF14bqtbiAzLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1684226282389!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5093830308424!2d106.67729837394491!3d10.772243759273097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f21198a62c1%3A0xa091bdb5049e5008!2zMTEyIMSQLiBDYW8gVGjhuq9uZywgUGjGsOG7nW5nIDQsIFF14bqtbiAzLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1684226282389!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </main>
     <!-- phần footer -->
     <footer>
-
+        <div class="container">
+            <div class="footer">
+                <span>Follow us</span>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="end"><span>© Copyright 2023 by - </span><a href="">cybersoft.edu.vn</a></div>
+        </div>
     </footer>
     <!-- phần backToTop -->
     <i class="toTop none fa-solid fa-angles-up"></i>

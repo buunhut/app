@@ -20,8 +20,9 @@ input {
   margin: 0;
   padding: 0;
 }
-textarea, input:focus{
-  outline: 1px solid royalblue;
+textarea,
+input:focus {
+  box-shadow: royalblue;
 }
 ul,
 li {
@@ -239,6 +240,46 @@ main {
 main p {
   padding: 20px 0;
 }
+
+/* footer */
+.footer {
+  background-color: black;
+  color: silver;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+.footer a {
+  color: black;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+.footer i {
+  width: 33px;
+  height: 33x;
+  text-align: center;
+  line-height: 33px;
+  background-color: white;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+footer a:hover i {
+  background-color: rgba(100, 100, 100, 0.6);
+  color: white;
+}
+.end {
+  padding: 20px;
+  color: silver;
+  text-align: center;
+}
+.end a {
+  color: silver;
+}
+.end a:hover {
+  font-weight: 600;
+  color: royalblue;
+}
+
 /* backToTop */
 .toTop {
   width: 33px;
@@ -253,43 +294,176 @@ main p {
   right: 5px;
   bottom: 5px;
 }
+
+/* trang nhập hàng */
+.nhapHang {
+  display: flex;
+  justify-content: space-around;
+}
+.nhapHangItem {
+  width: 50%;
+  padding: 30px;
+}
+/* table dùng chung */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid silver;
+}
+table tr,
+th,
+td {
+  border: 1px solid silver;
+  padding: 8px 10px;
+}
+
+table th {
+  background-color: royalblue;
+  color: white;
+  font-size: 14px;
+  padding: 10px 10px;
+}
+table tr:nth-child(even) {
+  background-color: rgba(180, 180, 180, 0.1);
+}
+table td:last-child {
+  text-align: center;
+  width: 80px;
+
+}
+
+.number {
+  text-align: right;
+}
+
+/* trang thêm nhân viên */
+.nhanVien{
+  display: flex;
+  justify-content: space-between;
+}
+.nhanVienBg{
+  padding: 10px 20px;
+  margin-top: 10px;
+  /* background-color: silver; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.nhanVienForm{
+  width: 35%;
+  padding: 0 30px;
+}
+.nhanVienForm h2{
+  /* text-align: center; */
+}
+.nhanVienList{
+  width: 65%;
+  padding-right: 30px;
+}
+.nhanVienForm form{
+  margin: 10px 0;
+  width: 100%;
+}
+.nhanVienForm form label{
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+}
+.nhanVienForm form input, select{
+  width: 100%;
+  margin-bottom: 10px;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+.nhanVienForm button{
+  font-size: 18px;
+  padding: 15px 20px;
+  color: white;
+  background-color: royalblue;
+  border: none;
+  letter-spacing: 2px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.nhanVienForm button i{
+  font-size: 24px;
+}
+
+.nhanVienForm button:hover{
+  /* background-color: rgb(33, 87, 247); */
+  color: rgb(255, 255, 30);
+}
+ .nhanVienForm .capNhatThongTinNhanVien{
+  display: none;
+}
+.nhanVienList .timNhanVien{
+  margin-top: 20px;
+}
+.nhanVienList .timNhanVien form input{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+/* nút sửa, xóa dùng chung */
+.sua{
+  padding: 5px;
+  font-size: 18px;
+  color: royalblue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.xoa {
+  padding: 5px;
+  font-size: 18px;
+  color: red;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
 /* trang liên hệ */
-.lienHe{
+.lienHe {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.lienHeItem{
+.lienHeItem {
   width: 50%;
   padding: 30px;
 }
-.lienHeItem h1{
+.lienHeItem h1 {
   margin-bottom: 10px;
 }
-.lienHeItem iframe{
+.lienHeItem iframe {
   width: 100%;
 }
-.lienHe form input{
+.lienHe form input {
   width: 100%;
   height: 40px;
   margin-bottom: 10px;
   padding: 10px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
-.lienHe form textarea{
+.lienHe form textarea {
   font-size: 18px;
   width: 100%;
   height: 200px;
   resize: none;
-  padding: 10px
+  padding: 10px;
 }
-.lienHe form label{
+.lienHe form label {
   display: block;
   font-size: 18px;
   padding-bottom: 5px;
 }
-.lienHe form button{
+.lienHe form button {
   font-size: 18px;
   padding: 15px 20px;
   color: white;
@@ -299,21 +473,14 @@ main p {
   letter-spacing: 2px;
   margin-top: 5px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.lienHe form button:hover{
+.lienHe form button:hover {
   background-color: rgb(33, 87, 247);
 }
-.lienHe .lienHeItem hr{
+.lienHe .lienHeItem hr {
   display: none;
-
 }
-
-
-
-
-
-
 
 /* responsive */
 @media screen and (max-width: 992px) {
@@ -456,24 +623,43 @@ main p {
   .mainMenu .topSmall a:hover {
     color: red;
   }
-
-  /* trang liên hệ */
-  .lienHe{
+  /* trang nhập hang */
+  .nhapHang {
     display: flex;
     flex-direction: column;
   }
-  .lienHe .lienHeItem{
+
+  .nhapHangItem {
     width: 100%;
+    padding: 10px;
   }
-  .lienHe .lienHeItem hr{
+  /* trang thêm nhân viên */
+  .nhanVien{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .nhanVien .nhanVienForm, .nhanVienList{
+    width: 100%;
+    padding: 10px
+  }
+
+  /* trang liên hệ */
+  .lienHe {
+    display: flex;
+    flex-direction: column;
+  }
+  .lienHe .lienHeItem {
+    width: 100%;
+    padding: 10px;
+  }
+  .lienHe .lienHeItem hr {
     display: block;
     margin-top: 50px;
     height: 1px;
     background-color: silver;
     border: none;
-
   }
-
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
 }
