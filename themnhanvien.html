@@ -111,7 +111,7 @@
     <main>
         <div class="container nhanVien">
             <div class="nhanVienForm">
-                <div class="nhanVienListTitle">
+                <div class="nhanVienFormTitle">
                     <h2><i class="fa-solid fa-circle-info"></i> Thông tin nhân viên</h2>
                     <button onclick="show()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
@@ -139,7 +139,7 @@
                         <input type="text" id="mucLuong">
                         <div class="formButton">
                             <button class="themNhanVien" type="button" onclick="themNhanVien()">
-                                <i class="fa-solid fa-circle-plus"></i> Lưu nhân viên</button>
+                                <i class="fa-solid fa-circle-plus"></i> Thêm nhân viên</button>
                             <button class="capNhatThongTinNhanVien none" type="button"
                                 onclick="capNhatThongTinNhanVien()">Cập
                                 nhật thông tin</button>
@@ -150,7 +150,7 @@
             <div class="nhanVienList">
                 <div class="nhanVienListTitle">
                     <h2> <i class="fa-solid fa-users"></i> Danh sách nhân viên</h2>
-                    <button onclick="show()"><i class="fa-sharp fa-solid fa-plus"></i> Thêm nhân Viên</button>
+                    <button onclick="show()"><i class="fa-sharp fa-solid fa-plus"></i> Nhân Viên</button>
                 </div>
 
                 <div class="nhanVienTableBg">
@@ -162,14 +162,15 @@
                     <table>
                         <tr>
                             <!-- <th>STT</th> -->
-                            <th>MÃ NV</th>
-                            <th>TÊN NHÂN VIÊN</th>
-                            <th>CHỨC VỤ</th>
-                            <th>ĐIỆN THOẠI</th>
-                            <th>ĐỊA CHỈ</th>
-                            <th>NGÀY VÀO</th>
-                            <th>MỨC LƯƠNG</th>
-                            <th>THAO TÁC</th>
+                            <th class="tblIdNhanVien none">ID NV</th>
+                            <th class="tblMaNhanVien">MÃ NV</th>
+                            <th class="tblTenNhanVien">TÊN NHÂN VIÊN</th>
+                            <th class="tblChucVu">CHỨC VỤ</th>
+                            <th class="tblDienThoai">ĐIỆN THOẠI</th>
+                            <th class="tblDiaChi">ĐỊA CHỈ</th>
+                            <th class="tblNgayVao">NGÀY VÀO</th>
+                            <th class="tblMucLuong">MỨC LƯƠNG</th>
+                            <th class="tblThaoTac"><i class="fa-solid fa-gear"></i></th>
                         </tr>
                         <tbody id="listNhanVien">
 
@@ -194,7 +195,7 @@
     </footer>
     <!-- phần backToTop -->
     <i class="toTop none fa-solid fa-angles-up"></i>
-    <div onclick="overLay()" class="overlay none"></div>
+    <div onclick="overLay()" class="overlay visibility"></div>
     <!-- link main.js -->
     <script src="./js/main.js"></script>
 </body>

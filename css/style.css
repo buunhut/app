@@ -49,7 +49,11 @@ a {
 
 .visibility {
   visibility: hidden;
-  transition: all 0.1s;
+  transition: all .3s;
+}
+.opacity {
+  opacity: 0;
+  transition: all .3s;
 }
 .fixTop {
   position: fixed;
@@ -315,13 +319,14 @@ table tr,
 th,
 td {
   border: 1px solid silver;
-  padding: 8px 10px;
+  padding: 5px 8px;
 }
 
 table th {
   background-color: royalblue;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   padding: 10px 10px;
 }
 table tr:nth-child(even) {
@@ -329,7 +334,6 @@ table tr:nth-child(even) {
 }
 table td:last-child {
   text-align: center;
-  width: 100px;
 
 }
 
@@ -357,7 +361,7 @@ table td:last-child {
   overflow-x: scroll;
 
 }
-.nhanVienListTitle{
+.nhanVienListTitle, .nhanVienFormTitle{
   display: flex;
   justify-content: space-between;
 }
@@ -368,12 +372,44 @@ table td:last-child {
   border: none;
   color: white;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.nhanVienListTitle button:hover{
+  color: rgb(255, 255, 30);
+}
+
+
+.nhanVienFormTitle button{
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  background-color: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 50%;
+}
+.nhanVienFormTitle button:hover{
+  color: rgb(255, 255, 30);
+}
+
+.formButton button{
+  padding: 10px 10px;
+  margin-right: 10px;
+  background-color: royalblue;
+  border: none;
+  color: white;
+  cursor: pointer;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+
 .nhanVienForm{
   padding-top: 10px;
   background-color: white;
   position: absolute;
-  top: -100%;
+  top: -300%;
   left: 50%;
   width: 500px;
   transform: translateX(-50%);
@@ -382,20 +418,39 @@ table td:last-child {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
-.show{
-  top: 120px !important;
+.tblMaNhanVien{
+  text-transform: uppercase;
+  width: 7%;
 }
-.overlay{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 4;
-
+.tblTenNhanVien{
+  text-transform: capitalize;
+  width: 20%;
+}
+.tblDiaChi{
+  text-transform: capitalize;
+  width: 30%;
 
 }
+.tblChucVu{
+  text-transform: capitalize;
+  width: 8%;
+}
+.tblDienThoai{
+  width: 10%;
+}
+.tblNgayVao{
+  text-align: center;
+  width: 8%;
+}
+.tblMucLuong{
+  text-align: right;
+  width: 10%;
+}
+.tblThaoTac{
+  text-align: center;
+  width: 7%;
+}
+
 
 /* h2 dùng chung */
 h2{
@@ -405,12 +460,19 @@ h2{
   width: 100%;
   padding: 0 30px;
 }
-
-/* thí dụ */
-.formHide{
-display: none;
-
+.show{
+  top: 90px !important;
 }
+.overlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 4;
+}
+
 
 
 
@@ -446,14 +508,14 @@ form button{
   width: 100%;
   cursor: pointer;
   transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 form button i{
   font-size: 24px;
 }
 
 /* css button dùng chung */
-button:hover{
-  background-color: rgb(33, 87, 247);
+form button:hover{
   color: rgb(255, 255, 30);
 }
 
@@ -471,7 +533,7 @@ button:hover{
 /* nút sửa, xóa dùng chung */
 .sua{
   padding: 5px;
-  font-size: 18px;
+  font-size: 16px;
   color: royalblue;
   border: none;
   border-radius: 8px;
@@ -479,7 +541,7 @@ button:hover{
 }
 .xoa {
   padding: 5px;
-  font-size: 18px;
+  font-size: 16px;
   color: red;
   border: none;
   border-radius: 8px;
@@ -683,6 +745,61 @@ hr {
     background-color: silver;
     border: none;
   }
+  /* trang thêm nhân viên */
+  .tblChucVu{
+    text-transform: capitalize;
+    width: 8%;
+    display: none;
+  }
+
+  .tblDiaChi{
+    text-transform: capitalize;
+    width: 30%;
+    display: none;
+  
+  }
+  
+  
 }
 @media screen and (max-width: 768px) {
+/* trang thêm nhân viên */
+.tblMaNhanVien{
+  text-transform: uppercase;
+  width: 7%;
+}
+.tblTenNhanVien{
+  text-transform: capitalize;
+  width: 20%;
+}
+.tblDiaChi{
+  text-transform: capitalize;
+  width: 30%;
+  display: none;
+
+}
+.tblChucVu{
+  text-transform: capitalize;
+  width: 8%;
+  display: none;
+}
+.tblDienThoai{
+  width: 10%;
+}
+.tblNgayVao{
+  text-align: center;
+  width: 8%;
+  display: none;
+}
+.tblMucLuong{
+  text-align: right;
+  width: 10%;
+}
+.tblThaoTac{
+  text-align: center;
+  width: 7%;
+  display: none;
+}
+
+
+
 }

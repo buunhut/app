@@ -213,10 +213,17 @@ function lopNhanVien(
 
 // lấy dữ thông tin nhân viên
 function layThongTinNhanVien() {
-  var demSoNhanVien =
-    Number(document.querySelectorAll("#listNhanVien tr").length) + 1;
+  var checkIdNhanVien = document.querySelectorAll(
+    "#listNhanVien tr td.tblIdNhanVien"
+  );
+  var idNhanVien = 0;
+  if(checkIdNhanVien.length == 0){
+    idNhanVien = 1;
+  } else {
+    idNhanVien = Number(checkIdNhanVien[0].innerHTML) + 1;
+  }
   //lấy dữ liệu từ inphut
-  var idNhanVien = demSoNhanVien;
+  // var idNhanVien = checkIdNhanVien + 1;
   var tenNhanVien = document.getElementById("tenNhanVien").value;
   var chucVu = document.getElementById("chucVu").value;
   var soDienThoai = document.getElementById("soDienThoai").value;
@@ -224,15 +231,15 @@ function layThongTinNhanVien() {
   var ngayVaoLam = document.getElementById("ngayVaoLam").value;
   var mucLuong = Number(document.getElementById("mucLuong").value);
   if (chucVu == "Quản lý") {
-    var maNhanVien = "ql0" + demSoNhanVien;
+    var maNhanVien = "ql0" + idNhanVien;
   } else if (chucVu == "Phục vụ") {
-    var maNhanVien = "pv0" + demSoNhanVien;
+    var maNhanVien = "pv0" + idNhanVien;
   } else if (chucVu == "Giao hàng") {
-    var maNhanVien = "gh0" + demSoNhanVien;
+    var maNhanVien = "gh0" + idNhanVien;
   } else {
-    var maNhanVien = "nv0" + demSoNhanVien;
+    var maNhanVien = "nv0" + idNhanVien;
   }
-  // tạo ra các lớp object nhân viên
+  //tạo ra các lớp object nhân viên
   var nhanVien = new lopNhanVien(
     idNhanVien,
     maNhanVien,
@@ -248,7 +255,6 @@ function layThongTinNhanVien() {
 
 //lấy thông tin chỉnh sửa
 function layThongTinNhanVienDaSua() {
-  // var demSoNhanVien = Number(document.querySelectorAll("#listNhanVien tr").length) + 1;
   //lấy dữ liệu từ inphut
   var idNhanVien = document.getElementById("idNhanVien").value;
   var maNhanVien = document.getElementById("maNhanVien").value;
@@ -321,14 +327,15 @@ function renderDanhSachNhanVien() {
   danhSachNhanVien.forEach(function (item, index) {
     listNhanVien += `
       <tr>
-        <td style="text-transform: uppercase;">${item.maNhanVien}</td>
-        <td style="text-transform: capitalize;">${item.tenNhanVien}</td>
-        <td style="text-transform: capitalize;">${item.chucVu}</td>
-        <td>${item.soDienThoai}</td>
-        <td style="text-transform: capitalize;">${item.diaChi}</td>
-        <td>${item.ngayVaoLam}</td>
-        <td class="number">${item.mucLuong.toLocaleString()}</td>
-        <td>
+        <td class="tblIdNhanVien none">${item.idNhanVien}</td>
+        <td class="tblMaNhanVien">${item.maNhanVien}</td>
+        <td class="tblTenNhanVien">${item.tenNhanVien}</td>
+        <td class="tblChucVu"">${item.chucVu}</td>
+        <td class="tblDienThoai">${item.soDienThoai}</td>
+        <td class="tblDiaChi">${item.diaChi}</td>
+        <td class="tblNgayVao">${item.ngayVaoLam}</td>
+        <td class="tblMucLuong">${item.mucLuong.toLocaleString()}</td>
+        <td class="tblThaoTac">
             <button class="sua" onclick="suaNhanVien('${item.idNhanVien}')">
               <i class="fa-regular fa-pen-to-square"></i>
             </button>
@@ -366,9 +373,9 @@ function themNhanVien() {
 function suaNhanVien(idNhanVien) {
   // xử lý các nút
   document.querySelector(".nhanVienForm").classList.toggle("show");
-  document.querySelector(".overlay").classList.toggle("none");
-  document.querySelector(".themNhanVien").classList.toggle("none");
-  document.querySelector(".capNhatThongTinNhanVien").classList.toggle("none");
+  document.querySelector(".overlay").classList.toggle("visibility");
+  document.querySelector(".themNhanVien").classList.add("none");
+  document.querySelector(".capNhatThongTinNhanVien").classList.remove("none");
 
   var i = timViTri(idNhanVien);
   duLieuInputNhanVien(
@@ -387,7 +394,7 @@ function capNhatThongTinNhanVien() {
   document.querySelector(".themNhanVien").classList.toggle("none");
   document.querySelector(".capNhatThongTinNhanVien").classList.toggle("none");
   document.querySelector(".nhanVienForm").classList.toggle("show");
-  document.querySelector(".overlay").classList.toggle("none");
+  document.querySelector(".overlay").classList.toggle("visibility");
 
   nhanVienDaSua = layThongTinNhanVienDaSua();
   console.log(nhanVienDaSua);
@@ -405,6 +412,7 @@ function capNhatThongTinNhanVien() {
 
 // chức năng xóa nhân viên
 function xoaNhanVien(idNhanVien) {
+  // confirm("Bạn có chắc muốn xóa nhân viên này");
   var i = timViTri(idNhanVien);
   danhSachNhanVien.splice(i, 1);
   renderDanhSachNhanVien();
@@ -412,11 +420,11 @@ function xoaNhanVien(idNhanVien) {
 
 function show() {
   document.querySelector(".nhanVienForm").classList.toggle("show");
-  document.querySelector(".overlay").classList.toggle("none");
+  document.querySelector(".overlay").classList.toggle("visibility");
 }
 
 //  nút overlay
 function overLay() {
   document.querySelector(".nhanVienForm").classList.toggle("show");
-  document.querySelector(".overlay").classList.toggle("none");
+  document.querySelector(".overlay").classList.toggle("visibility");
 }
