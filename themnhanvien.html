@@ -111,11 +111,15 @@
     <main>
         <div class="container nhanVien">
             <div class="nhanVienForm">
-                <h2>Thêm nhân viên</h2>
-                <div class="nhanVienBg">
+                <div class="nhanVienListTitle">
+                    <h2><i class="fa-solid fa-circle-info"></i> Thông tin nhân viên</h2>
+                    <button onclick="show()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="nhanVienFormBg">
                     <form action="">
-                        <label for="maNhanVien">Mã nhân viên</label>
-                        <input type="text" id="maNhanVien">
+                        <!-- <label for="idNhanVien">Mã nhân viên</label> -->
+                        <input type="text" id="idNhanVien" hidden>
+                        <input type="text" id="maNhanVien" hidden>
                         <label for="tenNhanVien">Tên nhân viên</label>
                         <input type="text" id="tenNhanVien">
                         <label for="chucVu">Chức vụ</label>
@@ -135,8 +139,8 @@
                         <input type="text" id="mucLuong">
                         <div class="formButton">
                             <button class="themNhanVien" type="button" onclick="themNhanVien()">
-                                <i class="fa-solid fa-circle-plus"></i> Thêm nhân viên</button>
-                            <button class="capNhatThongTinNhanVien" type="button"
+                                <i class="fa-solid fa-circle-plus"></i> Lưu nhân viên</button>
+                            <button class="capNhatThongTinNhanVien none" type="button"
                                 onclick="capNhatThongTinNhanVien()">Cập
                                 nhật thông tin</button>
                         </div>
@@ -144,8 +148,12 @@
                 </div>
             </div>
             <div class="nhanVienList">
-                <h2>Danh sách nhân viên</h2>
-                <div class="nhanVienBg">
+                <div class="nhanVienListTitle">
+                    <h2> <i class="fa-solid fa-users"></i> Danh sách nhân viên</h2>
+                    <button onclick="show()"><i class="fa-sharp fa-solid fa-plus"></i> Thêm nhân Viên</button>
+                </div>
+
+                <div class="nhanVienTableBg">
                     <div class="timNhanVien">
                         <form action="">
                             <input type="text" id="timNhanVien" placeholder="Tìm nhân viên ...,">
@@ -164,7 +172,7 @@
                             <th>THAO TÁC</th>
                         </tr>
                         <tbody id="listNhanVien">
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -186,6 +194,7 @@
     </footer>
     <!-- phần backToTop -->
     <i class="toTop none fa-solid fa-angles-up"></i>
+    <div onclick="overLay()" class="overlay none"></div>
     <!-- link main.js -->
     <script src="./js/main.js"></script>
 </body>

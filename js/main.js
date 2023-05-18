@@ -119,7 +119,7 @@ var toTop = document.querySelector(".toTop");
 // bắt sự kiện lăn chuột bằng window.onscroll
 
 window.onscroll = function () {
-  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     toTop.style.display = "block";
     mainMenu.classList.add("fixTop");
   } else {
@@ -176,30 +176,135 @@ function nhapHang() {
   renderNhapHang();
 }
 // xóa nhập hàng
-function xoaNhapHang(tenSanPhamMuonXoa){
+function xoaNhapHang(tenSanPhamMuonXoa) {
   var indexSanPhamMuonXoa = -1;
-  for(var i = 0; i < danhSachNhap.length; i++){
-    if(danhSachNhap[i].tenSanPham == tenSanPhamMuonXoa){
+  for (var i = 0; i < danhSachNhap.length; i++) {
+    if (danhSachNhap[i].tenSanPham == tenSanPhamMuonXoa) {
       indexSanPhamMuonXoa = i;
       break;
     }
   }
   console.log(indexSanPhamMuonXoa);
-  danhSachNhap.splice(indexSanPhamMuonXoa,1);
+  danhSachNhap.splice(indexSanPhamMuonXoa, 1);
   renderNhapHang();
 }
 
-// thêm nhân viên
+// trang thêm nhân viên
+// tạo lớp object nhân viên
+function lopNhanVien(
+  _idNhanVien,
+  _maNhanVien,
+  _tenNhanVien,
+  _chucVu,
+  _soDienThoai,
+  _diaChi,
+  _ngayVaoLam,
+  _mucLuong
+) {
+  this.idNhanVien = _idNhanVien;
+  this.maNhanVien = _maNhanVien;
+  this.tenNhanVien = _tenNhanVien;
+  this.chucVu = _chucVu;
+  this.soDienThoai = _soDienThoai;
+  this.diaChi = _diaChi;
+  this.ngayVaoLam = _ngayVaoLam;
+  this.mucLuong = _mucLuong;
+}
+
+// lấy dữ thông tin nhân viên
+function layThongTinNhanVien() {
+  var demSoNhanVien =
+    Number(document.querySelectorAll("#listNhanVien tr").length) + 1;
+  //lấy dữ liệu từ inphut
+  var idNhanVien = demSoNhanVien;
+  var tenNhanVien = document.getElementById("tenNhanVien").value;
+  var chucVu = document.getElementById("chucVu").value;
+  var soDienThoai = document.getElementById("soDienThoai").value;
+  var diaChi = document.getElementById("diaChi").value;
+  var ngayVaoLam = document.getElementById("ngayVaoLam").value;
+  var mucLuong = Number(document.getElementById("mucLuong").value);
+  if (chucVu == "Quản lý") {
+    var maNhanVien = "ql0" + demSoNhanVien;
+  } else if (chucVu == "Phục vụ") {
+    var maNhanVien = "pv0" + demSoNhanVien;
+  } else if (chucVu == "Giao hàng") {
+    var maNhanVien = "gh0" + demSoNhanVien;
+  } else {
+    var maNhanVien = "nv0" + demSoNhanVien;
+  }
+  // tạo ra các lớp object nhân viên
+  var nhanVien = new lopNhanVien(
+    idNhanVien,
+    maNhanVien,
+    tenNhanVien,
+    chucVu,
+    soDienThoai,
+    diaChi,
+    ngayVaoLam,
+    mucLuong
+  );
+  return nhanVien;
+}
+
+//lấy thông tin chỉnh sửa
+function layThongTinNhanVienDaSua() {
+  // var demSoNhanVien = Number(document.querySelectorAll("#listNhanVien tr").length) + 1;
+  //lấy dữ liệu từ inphut
+  var idNhanVien = document.getElementById("idNhanVien").value;
+  var maNhanVien = document.getElementById("maNhanVien").value;
+  var tenNhanVien = document.getElementById("tenNhanVien").value;
+  var chucVu = document.getElementById("chucVu").value;
+  var soDienThoai = document.getElementById("soDienThoai").value;
+  var diaChi = document.getElementById("diaChi").value;
+  var ngayVaoLam = document.getElementById("ngayVaoLam").value;
+  var mucLuong = Number(document.getElementById("mucLuong").value);
+  if (chucVu == "Quản lý") {
+    var maNhanVien = "ql0" + idNhanVien;
+  } else if (chucVu == "Phục vụ") {
+    var maNhanVien = "pv0" + idNhanVien;
+  } else if (chucVu == "Giao hàng") {
+    var maNhanVien = "gh0" + idNhanVien;
+  } else {
+    var maNhanVien = "nv0" + idNhanVien;
+  }
+  // tạo ra các lớp object nhân viên
+  var nhanVien = new lopNhanVien(
+    idNhanVien,
+    maNhanVien,
+    tenNhanVien,
+    chucVu,
+    soDienThoai,
+    diaChi,
+    ngayVaoLam,
+    mucLuong
+  );
+  return nhanVien;
+}
+
+// function tìm vị trí
+function timViTri(idNhanVien) {
+  // lấy mã nhân viên tìm ra vị trí index của nhân viên đó trong mảng danhSachNhanVien
+  for (var i = 0; i < danhSachNhanVien.length; i++) {
+    if (danhSachNhanVien[i].idNhanVien == idNhanVien) {
+      var index = i;
+      break;
+    }
+  }
+  return index;
+}
+
 // gán giá trị cho ô input, dùng reset dữ liệu trên form và eidt
 function duLieuInputNhanVien(
+  idNhanVien,
   maNhanVien,
   tenNhanVien,
   chucVu,
   soDienThoai,
   diaChi,
   ngayVaoLam,
-  mucLuong,
-){
+  mucLuong
+) {
+  document.getElementById("idNhanVien").value = idNhanVien;
   document.getElementById("maNhanVien").value = maNhanVien;
   document.getElementById("tenNhanVien").value = tenNhanVien;
   document.getElementById("chucVu").value = chucVu;
@@ -209,86 +314,109 @@ function duLieuInputNhanVien(
   document.getElementById("mucLuong").value = mucLuong;
 }
 
-
 // render danh sách nhân viên ra màn hình
-function renderDanhSachNhanVien(){
+function renderDanhSachNhanVien() {
   // tạo list nhân viên hứng dữ liệu để render
   var listNhanVien = [];
-  danhSachNhanVien.forEach(function(item, index){
+  danhSachNhanVien.forEach(function (item, index) {
     listNhanVien += `
       <tr>
-        <td>${item.maNhanVien}</td>
-        <td>${item.tenNhanVien}</td>
-        <td>${item.chucVu}</td>
+        <td style="text-transform: uppercase;">${item.maNhanVien}</td>
+        <td style="text-transform: capitalize;">${item.tenNhanVien}</td>
+        <td style="text-transform: capitalize;">${item.chucVu}</td>
         <td>${item.soDienThoai}</td>
-        <td>${item.diaChi}</td>
+        <td style="text-transform: capitalize;">${item.diaChi}</td>
         <td>${item.ngayVaoLam}</td>
         <td class="number">${item.mucLuong.toLocaleString()}</td>
         <td>
-            <button class="sua" onclick="suaNhanVien('${item.maNhanVien}')">
+            <button class="sua" onclick="suaNhanVien('${item.idNhanVien}')">
               <i class="fa-regular fa-pen-to-square"></i>
             </button>
-            <button class="xoa" onclick="xoaNhanVien('${item.maNhanVien}')">
+            <button class="xoa" onclick="xoaNhanVien('${item.idNhanVien}')">
               <i class="fa-solid fa-trash-can"></i>
             </button>
         </td>
       </tr>    
-    `
+    `;
   });
   document.getElementById("listNhanVien").innerHTML = listNhanVien;
 }
 
-
-// lớp object nhân viên
-function lopNhanVien(
-  _maNhanVien,
-  _tenNhanVien,
-  _chucVu,
-  _soDienThoai,
-  _diaChi,
-  _ngayVaoLam,
-  _mucLuong,
-){
-  this.maNhanVien = _maNhanVien;
-  this.tenNhanVien = _tenNhanVien;
-  this.chucVu = _chucVu;
-  this.soDienThoai = _soDienThoai;
-  this.diaChi = _diaChi;
-  this.ngayVaoLam = _ngayVaoLam;
-  this.mucLuong =  _mucLuong;
-}
 var danhSachNhanVien = [];
-function themNhanVien(){
-  //lấy dữ liệu từ inphut
-  var maNhanVien = document.getElementById("maNhanVien").value;
-  var tenNhanVien = document.getElementById("tenNhanVien").value;
-  var chucVu = document.getElementById("chucVu").value;
-  var soDienThoai = document.getElementById("soDienThoai").value;
-  var diaChi = document.getElementById("diaChi").value;
-  var ngayVaoLam = document.getElementById("ngayVaoLam").value;
-  var mucLuong = Number(document.getElementById("mucLuong").value);
-  // tạo ra các lớp object nhân viên
-  var nhanVien = new lopNhanVien(
-    maNhanVien,
-    tenNhanVien,
-    chucVu,
-    soDienThoai,
-    diaChi,
-    ngayVaoLam,
-    mucLuong,
-  )
+
+//chức năng nhân viên
+function themNhanVien() {
+  // xử lý các nút
+  // document.querySelector(".nhanVienForm").classList.toggle("none");
+  // document.querySelector(".nhanVienForm").classList.toggle("show");
+  // document.querySelector(".overlay").classList.toggle("none")
+  var nhanVien = layThongTinNhanVien();
+
   // truyền lớp nhân viên vừa tạo ra vào trong danh sách nhân viên
-  danhSachNhanVien.push(nhanVien);
+  danhSachNhanVien.unshift(nhanVien);
 
   // reset dữ liệu các ô input của form
-  duLieuInputNhanVien("","","","","","","");
+  duLieuInputNhanVien("", "", "", "", "", "", "", "", "");
 
   //renderDanhSachNhanVien ra màn hình
   renderDanhSachNhanVien();
+}
 
-  
+// chức năng sửa thông tin nhân viên
+function suaNhanVien(idNhanVien) {
+  // xử lý các nút
+  document.querySelector(".nhanVienForm").classList.toggle("show");
+  document.querySelector(".overlay").classList.toggle("none");
+  document.querySelector(".themNhanVien").classList.toggle("none");
+  document.querySelector(".capNhatThongTinNhanVien").classList.toggle("none");
 
+  var i = timViTri(idNhanVien);
+  duLieuInputNhanVien(
+    danhSachNhanVien[i].idNhanVien,
+    danhSachNhanVien[i].maNhanVien,
+    danhSachNhanVien[i].tenNhanVien,
+    danhSachNhanVien[i].chucVu,
+    danhSachNhanVien[i].soDienThoai,
+    danhSachNhanVien[i].diaChi,
+    danhSachNhanVien[i].ngayVaoLam,
+    danhSachNhanVien[i].mucLuong
+  );
+}
+// chức năng cập nhật thông tin nhân viên
+function capNhatThongTinNhanVien() {
+  document.querySelector(".themNhanVien").classList.toggle("none");
+  document.querySelector(".capNhatThongTinNhanVien").classList.toggle("none");
+  document.querySelector(".nhanVienForm").classList.toggle("show");
+  document.querySelector(".overlay").classList.toggle("none");
 
+  nhanVienDaSua = layThongTinNhanVienDaSua();
+  console.log(nhanVienDaSua);
+  console.log(nhanVienDaSua.idNhanVien);
 
+  var index = timViTri(nhanVienDaSua.idNhanVien);
 
+  danhSachNhanVien[index] = nhanVienDaSua;
+
+  // reset dữ liệu các ô input của form
+  duLieuInputNhanVien("", "", "", "", "", "", "", "");
+
+  renderDanhSachNhanVien();
+}
+
+// chức năng xóa nhân viên
+function xoaNhanVien(idNhanVien) {
+  var i = timViTri(idNhanVien);
+  danhSachNhanVien.splice(i, 1);
+  renderDanhSachNhanVien();
+}
+
+function show() {
+  document.querySelector(".nhanVienForm").classList.toggle("show");
+  document.querySelector(".overlay").classList.toggle("none");
+}
+
+//  nút overlay
+function overLay() {
+  document.querySelector(".nhanVienForm").classList.toggle("show");
+  document.querySelector(".overlay").classList.toggle("none");
 }
