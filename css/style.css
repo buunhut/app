@@ -348,15 +348,29 @@ table td:last-child {
   display: flex;
   justify-content: space-between;
 }
+.nhanVienForm {
+  padding-top: 10px;
+  background-color: white;
+  position: absolute;
+  top: -300%;
+  left: 50%;
+  width: 500px;
+  transform: translateX(-50%);
+  z-index: 8;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .nhanVienFormBg,
 .lienHeBg {
-  padding: 5px 16px;
+  padding: 5px 10px;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .nhanVienFormBg form {
   position: relative;
-  padding: 20px;
+  padding: 20px 10px;
+  overflow: hidden;
 }
 
 .formBgStyle {
@@ -366,10 +380,9 @@ table td:last-child {
   right: 0;
   bottom: 0;
   z-index: -1;
-  border-left: 470px solid rgba(65, 105, 225, 0.3);
-  border-bottom: 400px solid rgba(226, 43, 43, 0.3);
+  border-left: 480px solid rgba(65, 105, 225, 0.3);
+  border-bottom: 400px solid rgba(255, 255, 30, 0.3);
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .nhanVienTableBg {
   padding: 5px 16px;
@@ -428,18 +441,6 @@ table td:last-child {
   color: rgb(255, 255, 30);
 }
 
-.nhanVienForm {
-  padding-top: 10px;
-  background-color: white;
-  position: absolute;
-  top: -300%;
-  left: 50%;
-  width: 500px;
-  transform: translateX(-50%);
-  z-index: 10;
-  transition: all 0.5s;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
 .tblMaNhanVien {
   text-transform: uppercase;
   width: 7%;
@@ -740,10 +741,13 @@ hr {
     display: flex;
     flex-direction: column;
   }
-  .nhanVien .nhanVienForm,
+  .nhanVien,
   .nhanVienList {
     width: 100%;
     padding: 10px;
+  }
+  .nhanVienForm{
+    max-width: 500px;
   }
 
   /* trang liên hệ */
@@ -777,6 +781,8 @@ hr {
 }
 @media screen and (max-width: 768px) {
   /* trang thêm nhân viên */
+
+ 
   .tblMaNhanVien {
     text-transform: uppercase;
     width: 7%;
@@ -824,6 +830,10 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 16px;
   }
+  .show {
+    top: 50px !important;
+  }
+  
 }
 
 /* css thí dụ */
