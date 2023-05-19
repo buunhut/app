@@ -49,11 +49,11 @@ a {
 
 .visibility {
   visibility: hidden;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .opacity {
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .fixTop {
   position: fixed;
@@ -111,7 +111,7 @@ a {
   text-align: center;
   line-height: 28px;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 0;
 }
 /* logo */
@@ -139,6 +139,7 @@ a {
   font-size: 12px;
 }
 .mainMenu ul li a {
+  font-size: 16px;
   color: white;
   position: relative;
   transition: all 0.1s;
@@ -334,52 +335,68 @@ table tr:nth-child(even) {
 }
 table td:last-child {
   text-align: center;
-
 }
 
 .number {
   text-align: right;
 }
-.hideSmall{
+.hideSmall {
   display: none;
 }
 /* trang thêm nhân viên */
-.nhanVien{
+.nhanVien {
   display: flex;
   justify-content: space-between;
 }
-.nhanVienFormBg, .lienHeBg{
+.nhanVienFormBg,
+.lienHeBg {
   padding: 5px 16px;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
-.nhanVienTableBg{
+.nhanVienFormBg form {
+  position: relative;
+  padding: 20px;
+}
+
+.formBgStyle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-left: 470px solid rgba(65, 105, 225, 0.3);
+  border-bottom: 400px solid rgba(226, 43, 43, 0.3);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.nhanVienTableBg {
   padding: 5px 16px;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow-x: scroll;
-
 }
-.nhanVienListTitle, .nhanVienFormTitle{
+.nhanVienListTitle,
+.nhanVienFormTitle {
   display: flex;
   justify-content: space-between;
 }
-.nhanVienListTitle button{
-  padding: 10px 10px;
+.nhanVienListTitle button {
+  padding: 15px 20px;
   margin-right: 10px;
   background-color: royalblue;
   border: none;
   color: white;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 20px;
 }
-.nhanVienListTitle button:hover{
+.nhanVienListTitle button:hover {
   color: rgb(255, 255, 30);
 }
 
-
-.nhanVienFormTitle button{
+.nhanVienFormTitle button {
   width: 26px;
   height: 26px;
   margin-right: 10px;
@@ -390,22 +407,28 @@ table td:last-child {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 50%;
 }
-.nhanVienFormTitle button:hover{
+.nhanVienFormTitle button:hover {
   color: rgb(255, 255, 30);
 }
+.formButton {
+  margin-top: 20px;
+}
 
-.formButton button{
-  padding: 10px 10px;
-  margin-right: 10px;
+.formButton button {
+  padding: 15px 20px;
+  margin-bottom: 20px;
   background-color: royalblue;
   border: none;
   color: white;
   cursor: pointer;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 20px;
+}
+.formButton button:hover {
+  color: rgb(255, 255, 30);
 }
 
-
-.nhanVienForm{
+.nhanVienForm {
   padding-top: 10px;
   background-color: white;
   position: absolute;
@@ -414,56 +437,53 @@ table td:last-child {
   width: 500px;
   transform: translateX(-50%);
   z-index: 10;
-  transition: all .5s;
+  transition: all 0.5s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
-.tblMaNhanVien{
+.tblMaNhanVien {
   text-transform: uppercase;
   width: 7%;
 }
-.tblTenNhanVien{
+.tblTenNhanVien {
   text-transform: capitalize;
   width: 20%;
 }
-.tblDiaChi{
+.tblDiaChi {
   text-transform: capitalize;
   width: 30%;
-
 }
-.tblChucVu{
+.tblChucVu {
   text-transform: capitalize;
   width: 8%;
 }
-.tblDienThoai{
-  width: 10%;
-}
-.tblNgayVao{
-  text-align: center;
+.tblDienThoai {
   width: 8%;
 }
-.tblMucLuong{
+.tblNgayVao {
+  text-align: center;
+  width: 10%;
+}
+.tblMucLuong {
   text-align: right;
   width: 10%;
 }
-.tblThaoTac{
+.tblThaoTac {
   text-align: center;
   width: 7%;
 }
 
-
 /* h2 dùng chung */
-h2{
+h2 {
   padding: 0 10px;
 }
-.nhanVienList{
+.nhanVienList {
   width: 100%;
   padding: 0 30px;
 }
-.show{
+.show {
   top: 90px !important;
 }
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -473,32 +493,30 @@ h2{
   z-index: 4;
 }
 
-
-
-
 /* form dùng chung */
-form{
+form {
   margin: 10px 0;
   width: 100%;
 }
-form label{
+form label {
   font-size: 16px;
   font-weight: 500;
   display: block;
 }
-form input, select{
+form input,
+select {
   width: 100%;
   margin-bottom: 10px;
   height: 30px;
   padding: 0 10px;
   font-size: 16px;
 }
-form textarea{
+form textarea {
   width: 100%;
   height: 200px;
   margin-bottom: 10px;
 }
-form button{
+form button {
   font-size: 18px;
   padding: 15px 20px;
   color: white;
@@ -510,19 +528,19 @@ form button{
   transition: all 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-form button i{
+form button i {
   font-size: 24px;
 }
 
 /* css button dùng chung */
-form button:hover{
+form button:hover {
   color: rgb(255, 255, 30);
 }
 
-.nhanVienList .timNhanVien{
+.nhanVienList .timNhanVien {
   margin-top: 20px;
 }
-.nhanVienList .timNhanVien form input{
+.nhanVienList .timNhanVien form input {
   width: 100%;
   height: 30px;
   margin-bottom: 10px;
@@ -531,7 +549,7 @@ form button:hover{
 }
 
 /* nút sửa, xóa dùng chung */
-.sua{
+.sua {
   padding: 5px;
   font-size: 16px;
   color: royalblue;
@@ -547,7 +565,6 @@ form button:hover{
   border-radius: 8px;
   cursor: pointer;
 }
-
 
 /* trang liên hệ */
 .lienHe {
@@ -719,14 +736,14 @@ hr {
     padding: 10px;
   }
   /* trang thêm nhân viên */
-  .nhanVien{
+  .nhanVien {
     display: flex;
     flex-direction: column;
-
   }
-  .nhanVien .nhanVienForm, .nhanVienList{
+  .nhanVien .nhanVienForm,
+  .nhanVienList {
     width: 100%;
-    padding: 10px
+    padding: 10px;
   }
 
   /* trang liên hệ */
@@ -746,60 +763,75 @@ hr {
     border: none;
   }
   /* trang thêm nhân viên */
-  .tblChucVu{
+  .tblChucVu {
     text-transform: capitalize;
     width: 8%;
     display: none;
   }
 
-  .tblDiaChi{
+  .tblDiaChi {
     text-transform: capitalize;
     width: 30%;
     display: none;
-  
   }
-  
-  
 }
 @media screen and (max-width: 768px) {
-/* trang thêm nhân viên */
-.tblMaNhanVien{
-  text-transform: uppercase;
-  width: 7%;
-}
-.tblTenNhanVien{
-  text-transform: capitalize;
-  width: 20%;
-}
-.tblDiaChi{
-  text-transform: capitalize;
-  width: 30%;
-  display: none;
+  /* trang thêm nhân viên */
+  .tblMaNhanVien {
+    text-transform: uppercase;
+    width: 7%;
+  }
+  .tblTenNhanVien {
+    text-transform: capitalize;
+    width: 20%;
+  }
+  .tblDiaChi {
+    text-transform: capitalize;
+    width: 30%;
+    display: none;
+  }
+  .tblChucVu {
+    text-transform: capitalize;
+    width: 8%;
+    display: none;
+  }
+  .tblDienThoai {
+    width: 10%;
+  }
+  .tblNgayVao {
+    text-align: center;
+    width: 8%;
+    display: none;
+  }
+  .tblMucLuong {
+    text-align: right;
+    width: 10%;
+    display: none;
+  }
+  .tblThaoTac {
+    text-align: center;
+    width: 7%;
+  }
 
-}
-.tblChucVu{
-  text-transform: capitalize;
-  width: 8%;
-  display: none;
-}
-.tblDienThoai{
-  width: 10%;
-}
-.tblNgayVao{
-  text-align: center;
-  width: 8%;
-  display: none;
-}
-.tblMucLuong{
-  text-align: right;
-  width: 10%;
-}
-.tblThaoTac{
-  text-align: center;
-  width: 7%;
-  display: none;
+  /*nút thêm nhân viên */
+  .nhanVienListTitle button {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 16px;
+  }
 }
 
-
-
+/* css thí dụ */
+.demo {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  background-color: black;
+  transition: cubic-bezier(1, 0, 0, 1) 1s;
+  transform: translateY(-500px);
 }
