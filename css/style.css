@@ -371,6 +371,7 @@ table td:last-child {
   position: relative;
   padding: 20px 10px;
   overflow: hidden;
+
 }
 
 .formBgStyle {
@@ -781,6 +782,31 @@ hr {
 }
 @media screen and (max-width: 768px) {
   /* trang thêm nhân viên */
+  .nhanVienForm {
+    width: 380px;
+    transform: translateX(-50%);
+  }
+  
+
+  .nhanVienFormBg form {
+    position: relative;
+    padding: 20px 10px;
+    overflow: hidden;
+
+  }
+  
+  .formBgStyle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-left: 360px solid rgba(65, 105, 225, 0.3);
+    border-bottom: 400px solid rgba(255, 255, 30, 0.3);
+    border-radius: 8px;
+  }
+  
 
  
   .tblMaNhanVien {
