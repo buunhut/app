@@ -167,6 +167,7 @@ function xoaNhapHang(tenSanPhamMuonXoa) {
 
 // nút tạo thêm nhân viên
 function show() {
+  duLieuInputNhanVien("", "", "", "", "", "", "", "", "");
   document.querySelector(".nhanVienForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");
@@ -207,7 +208,7 @@ function layThongTinNhanVien() {
   var soDienThoai = document.getElementById("soDienThoai").value;
   var diaChi = document.getElementById("diaChi").value;
   var ngayVaoLam = document.getElementById("ngayVaoLam").value;
-  var mucLuong = Number(document.getElementById("mucLuong").value);
+  var mucLuong = document.getElementById("mucLuong").value;
   if (chucVu == "Quản lý") {
     var maNhanVien = "ql0" + idNhanVien;
   } else if (chucVu == "Phục vụ") {
@@ -254,7 +255,7 @@ function layThongTinNhanVienDaSua() {
   var soDienThoai = document.getElementById("soDienThoai").value;
   var diaChi = document.getElementById("diaChi").value;
   var ngayVaoLam = document.getElementById("ngayVaoLam").value;
-  var mucLuong = Number(document.getElementById("mucLuong").value);
+  var mucLuong = document.getElementById("mucLuong").value;
   if (chucVu == "Quản lý") {
     var maNhanVien = "ql0" + idNhanVien;
   } else if (chucVu == "Phục vụ") {
