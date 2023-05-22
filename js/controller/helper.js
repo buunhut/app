@@ -40,6 +40,7 @@ function renderDanhSachNhanVien() {
           <td class="tblTenNhanVien">${item.tenNhanVien}</td>
           <td class="tblChucVu"">${item.chucVu}</td>
           <td class="tblDienThoai">${item.soDienThoai}</td>
+          <td class="tblEmail">${item.eMail}</td>
           <td class="tblDiaChi">${item.diaChi}</td>
           <td class="tblNgayVao">${item.ngayVaoLam}</td>
           <td class="tblMucLuong">${item.mucLuong.toLocaleString()}</td>
@@ -64,6 +65,7 @@ function duLieuInputNhanVien(
   tenNhanVien,
   chucVu,
   soDienThoai,
+  eMail,
   diaChi,
   ngayVaoLam,
   mucLuong
@@ -73,6 +75,7 @@ function duLieuInputNhanVien(
   document.getElementById("tenNhanVien").value = tenNhanVien;
   document.getElementById("chucVu").value = chucVu;
   document.getElementById("soDienThoai").value = soDienThoai;
+  document.getElementById("eMail").value = eMail;
   document.getElementById("diaChi").value = diaChi;
   document.getElementById("ngayVaoLam").value = ngayVaoLam;
   document.getElementById("mucLuong").value = mucLuong;

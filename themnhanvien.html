@@ -115,40 +115,57 @@
                     <h2><i class="fa-solid fa-circle-info"></i> Thông tin nhân viên</h2>
                     <button onclick="show()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-
-
-
                 <div class="nhanVienFormBg">
                     <form action="">
                         <!-- <label for="idNhanVien">Mã nhân viên</label> -->
                         <input type="text" id="idNhanVien" hidden>
                         <input type="text" id="maNhanVien" hidden>
-                        <label id="tbTenNV" for="tenNhanVien">Tên nhân viên</label>
-                        <input type="text" id="tenNhanVien">
-
-                        <label id="tbChucVu" for="chucVu">Chức vụ</label>
-                        <select name="" id="chucVu">
-                            <option value=""></option>
-                            <option value="Quản lý">Quản lý</option>
-                            <option value="Phục vụ">Phục vụ</option>
-                            <option value="Giao hàng">Giao hàng</option>
-                        </select>
-
-                        <label id="tbSoDienThoai" for="soDienThoai">Số điện thoại</label>
-                        <input type="text" id="soDienThoai">
-
-                        <label id="tbSoDiaChi" for="diaChi">Địa chỉ</label>
-                        <input type="text" id="diaChi">
-
-                        <label id="tbNgayVaoLam" for="Ngày vào làm">Ngày vào làm</label>
-                        <input type="date" id="ngayVaoLam">
-
-                        <label id="tbMucLuong" for="mucLuong">Mức lương</label>
-                        <input type="text" id="mucLuong" onkeyup="dinhDangSo()">
-
-
+                        <div class="formItem">
+                            <label id="tbTenNV" for="tenNhanVien"><i class="fa-solid fa-user-tie"></i></label>
+                            <input type="text" id="tenNhanVien" placeholder="Họ và tên">
+                        </div>
+                        <div class="formItem">
+                            <label id="tbChucVu" for="chucVu">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </label>
+                            <select name="" id="chucVu">
+                                <option value="">Chức vụ</option>
+                                <option value="Quản lý">Quản lý</option>
+                                <option value="Phục vụ">Phục vụ</option>
+                                <option value="Giao hàng">Giao hàng</option>
+                            </select>
+                        </div>
+                        <div class="formItem">
+                            <label id="tbSoDienThoai" for="soDienThoai">
+                                <i class="fa-solid fa-phone"></i>
+                            </label>
+                            <input type="text" id="soDienThoai" placeholder="Số điện thoại">
+                        </div>
+                        <div class="formItem">
+                            <label id="tbEmail" for="eMail">
+                                <i class="fa-solid fa-at"></i>
+                            </label>
+                            <input type="text" id="eMail" placeholder="E-mail" onchange="checkEmail()">
+                        </div>
+                        <div class="formItem">
+                            <label id="tbSoDiaChi" for="diaChi">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </label>
+                            <input type="text" id="diaChi" placeholder="Địa chỉ">
+                        </div>
+                        <div class="formItem">
+                            <label id="tbNgayVaoLam" for="Ngày vào làm">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </label>
+                            <input type="date" id="ngayVaoLam" placeholder="Ngày vào làm">
+                        </div>
+                        <div class="formItem">
+                            <label id="tbMucLuong" for="mucLuong">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </label>
+                            <input type="text" id="mucLuong" placeholder="Mức lương" onkeyup="dinhDangSo('mucLuong')">
+                        </div>
                         <div class="formBgStyle"></div>
-
                     </form>
                     <div class="formButton">
                         <button class="themNhanVien" type="button" onclick="themNhanVien()">
@@ -158,8 +175,6 @@
                             nhật thông tin</button>
                         <button class="xoahanVien none" type="button" onclick="xoaNhanVien()">Xóa nhân viên</button>
                     </div>
-
-
                 </div>
             </div>
             <div class="nhanVienList">
@@ -170,8 +185,9 @@
 
                 <div class="nhanVienTableBg">
                     <div class="timNhanVien">
+                        <i class="iconSearch fa-solid fa-magnifying-glass"></i>
                         <form action="">
-                            <input type="text" id="timNhanVien" placeholder="Tìm nhân viên ...,">
+                            <input type="text" id="timNhanVien" placeholder="Tìm mã nhân viên, tên nhân viên...,">
                         </form>
                     </div>
                     <table>
@@ -182,6 +198,7 @@
                             <th class="tblTenNhanVien">TÊN NHÂN VIÊN</th>
                             <th class="tblChucVu">CHỨC VỤ</th>
                             <th class="tblDienThoai">ĐIỆN THOẠI</th>
+                            <th class="tblEmail">EMAIL</th>
                             <th class="tblDiaChi">ĐỊA CHỈ</th>
                             <th class="tblNgayVao">NGÀY VÀO</th>
                             <th class="tblMucLuong">MỨC LƯƠNG</th>
@@ -205,7 +222,7 @@
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <div class="end"><span>© Copyright 2023 by - </span><a href="">cybersoft.edu.vn</a></div>
+            <div class="end"><span>© Copyright 2023 - by </span><a href="">cybersoft.edu.vn</a></div>
         </div>
     </footer>
 
@@ -216,7 +233,7 @@
     <!-- link main.js -->
 
     <script src="./js/controller/object.js"></script>
-    <script src="./js/controller/helper.js"></script>   
+    <script src="./js/controller/helper.js"></script>
     <script src="./js/controller/validate.js"></script>
     <script src="./js/main.js"></script>
 

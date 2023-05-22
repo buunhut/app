@@ -360,7 +360,20 @@ table td:last-child {
   transition: all 0.5s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.nhanVienForm .formItem {
+  display: flex;
+  align-items: center;
+}
+.nhanVienForm .formItem label i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  /* background-color: silver; */
+  margin-bottom: 10px;
+  /* color: royalblue; */
+  font-size: 20px;
+}
 .nhanVienFormBg,
 .lienHeBg {
   padding: 5px 10px;
@@ -369,9 +382,8 @@ table td:last-child {
 }
 .nhanVienFormBg form {
   position: relative;
-  padding: 20px 10px;
+  padding: 20px 20px 10px 10px;
   overflow: hidden;
-
 }
 
 .formBgStyle {
@@ -382,7 +394,7 @@ table td:last-child {
   bottom: 0;
   z-index: -1;
   border-left: 480px solid rgba(65, 105, 225, 0.3);
-  border-bottom: 400px solid rgba(255, 255, 30, 0.3);
+  border-bottom: 375px solid rgba(255, 0, 0, 0.3);
   border-radius: 8px;
 }
 .nhanVienTableBg {
@@ -397,14 +409,14 @@ table td:last-child {
   justify-content: space-between;
 }
 .nhanVienListTitle button {
-  padding: 15px 20px;
+  padding: 10px 20px;
   margin-right: 10px;
+  color: white;
   background-color: royalblue;
   border: none;
-  color: white;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-size: 20px;
+  font-size: 16px;
 }
 .nhanVienListTitle button:hover {
   color: rgb(255, 255, 30);
@@ -425,18 +437,18 @@ table td:last-child {
   color: rgb(255, 255, 30);
 }
 .formButton {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .formButton button {
-  padding: 15px 20px;
+  padding: 10px 20px;
   margin-bottom: 20px;
   background-color: royalblue;
   border: none;
   color: white;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .formButton button:hover {
   color: rgb(255, 255, 30);
@@ -444,34 +456,37 @@ table td:last-child {
 
 .tblMaNhanVien {
   text-transform: uppercase;
-  width: 7%;
+  /* width: 7%; */
 }
 .tblTenNhanVien {
   text-transform: capitalize;
-  width: 20%;
+  /* width: 20%; */
 }
 .tblDiaChi {
   text-transform: capitalize;
-  width: 30%;
+  /* width: 30%; */
 }
 .tblChucVu {
   text-transform: capitalize;
-  width: 8%;
+  /* width: 8%; */
 }
 .tblDienThoai {
-  width: 8%;
+  /* width: 8%; */
+}
+.tblEmail {
+  /* width: 16%; */
 }
 .tblNgayVao {
   text-align: center;
-  width: 10%;
+  /* width: 10%; */
 }
 .tblMucLuong {
   text-align: right;
-  width: 10%;
+  /* width: 10%; */
 }
 .tblThaoTac {
   text-align: center;
-  width: 7%;
+  /* width: 7%; */
 }
 
 /* h2 dùng chung */
@@ -509,7 +524,7 @@ form input,
 select {
   width: 100%;
   margin-bottom: 10px;
-  height: 30px;
+  height: 40px;
   padding: 0 10px;
   font-size: 16px;
 }
@@ -541,12 +556,24 @@ form button:hover {
 
 .nhanVienList .timNhanVien {
   margin-top: 20px;
+  position: relative;
+}
+.nhanVienList .iconSearch{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  background-color: royalblue;
 }
 .nhanVienList .timNhanVien form input {
   width: 100%;
-  height: 30px;
+  height: 40px;
   margin-bottom: 10px;
-  padding: 0 10px;
+  padding: 0 10px 0 50px;
   font-size: 16px;
 }
 
@@ -747,7 +774,7 @@ hr {
     width: 100%;
     padding: 10px;
   }
-  .nhanVienForm{
+  .nhanVienForm {
     max-width: 500px;
   }
 
@@ -786,15 +813,13 @@ hr {
     width: 380px;
     transform: translateX(-50%);
   }
-  
 
   .nhanVienFormBg form {
     position: relative;
-    padding: 20px 10px;
+    padding: 10px 10px 0px 0px;
     overflow: hidden;
-
   }
-  
+
   .formBgStyle {
     position: absolute;
     top: 0;
@@ -803,12 +828,10 @@ hr {
     bottom: 0;
     z-index: -1;
     border-left: 360px solid rgba(65, 105, 225, 0.3);
-    border-bottom: 400px solid rgba(255, 255, 30, 0.3);
+    border-bottom: 360px solid rgba(255, 0, 0, 0.3);
     border-radius: 8px;
   }
-  
 
- 
   .tblMaNhanVien {
     text-transform: uppercase;
     width: 7%;
@@ -818,6 +841,11 @@ hr {
     width: 20%;
   }
   .tblDiaChi {
+    text-transform: capitalize;
+    width: 30%;
+    display: none;
+  }
+  .tblEmail {
     text-transform: capitalize;
     width: 30%;
     display: none;
@@ -856,18 +884,10 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 16px;
   }
+  .formButton button {
+    padding: 10px;
+  }
   .show {
     top: 50px !important;
   }
-  
-}
-
-/* css thí dụ */
-.demo {
-  margin: 0 auto;
-  width: 0;
-  height: 0;
-  background-color: black;
-  transition: cubic-bezier(1, 0, 0, 1) 1s;
-  transform: translateY(-500px);
 }

@@ -167,7 +167,7 @@ function xoaNhapHang(tenSanPhamMuonXoa) {
 
 // nút tạo thêm nhân viên
 function show() {
-  duLieuInputNhanVien("", "", "", "", "", "", "", "", "");
+  duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "");
   document.querySelector(".nhanVienForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");
@@ -178,7 +178,7 @@ function show() {
 function overLay() {
   document.querySelector(".nhanVienForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
-  duLieuInputNhanVien("", "", "", "", "", "", "", "", "");
+  duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "");
 }
 
 // trang thêm nhân viên
@@ -206,6 +206,7 @@ function layThongTinNhanVien() {
   var tenNhanVien = document.getElementById("tenNhanVien").value;
   var chucVu = document.getElementById("chucVu").value;
   var soDienThoai = document.getElementById("soDienThoai").value;
+  var eMail = document.getElementById("eMail").value;
   var diaChi = document.getElementById("diaChi").value;
   var ngayVaoLam = document.getElementById("ngayVaoLam").value;
   var mucLuong = document.getElementById("mucLuong").value;
@@ -224,9 +225,12 @@ function layThongTinNhanVien() {
     checkRong(tenNhanVien, "tbTenNV") &
     checkRong(chucVu, "tbChucVu") &
     checkRong(soDienThoai, "tbSoDienThoai") &
+    checkRong(eMail, "tbEmail") &
     checkRong(diaChi, "tbSoDiaChi") &
     checkRong(ngayVaoLam, "tbNgayVaoLam") &
-    checkRong(mucLuong, "tbMucLuong");
+    checkRong(mucLuong, "tbMucLuong") &
+    checkPhone(soDienThoai, "tbSoDienThoai") &
+    checkEmail(eMail, "tbEmail") 
   if (!valid) {
     return;
   }
@@ -238,6 +242,7 @@ function layThongTinNhanVien() {
     tenNhanVien,
     chucVu,
     soDienThoai,
+    eMail,
     diaChi,
     ngayVaoLam,
     mucLuong
@@ -253,6 +258,7 @@ function layThongTinNhanVienDaSua() {
   var tenNhanVien = document.getElementById("tenNhanVien").value;
   var chucVu = document.getElementById("chucVu").value;
   var soDienThoai = document.getElementById("soDienThoai").value;
+  var eMail = document.getElementById("eMail").value;
   var diaChi = document.getElementById("diaChi").value;
   var ngayVaoLam = document.getElementById("ngayVaoLam").value;
   var mucLuong = document.getElementById("mucLuong").value;
@@ -271,6 +277,7 @@ function layThongTinNhanVienDaSua() {
     checkRong(tenNhanVien, "tbTenNV") &
     checkRong(chucVu, "tbChucVu") &
     checkRong(soDienThoai, "tbSoDienThoai") &
+    checkRong(eMail, "tbEmail") &
     checkRong(diaChi, "tbSoDiaChi") &
     checkRong(ngayVaoLam, "tbNgayVaoLam") &
     checkRong(mucLuong, "tbMucLuong");
@@ -284,6 +291,7 @@ function layThongTinNhanVienDaSua() {
     tenNhanVien,
     chucVu,
     soDienThoai,
+    eMail,
     diaChi,
     ngayVaoLam,
     mucLuong
@@ -331,6 +339,7 @@ function suaNhanVien(idNhanVien) {
     danhSachNhanVien[i].tenNhanVien,
     danhSachNhanVien[i].chucVu,
     danhSachNhanVien[i].soDienThoai,
+    danhSachNhanVien[i].eMail,
     danhSachNhanVien[i].diaChi,
     danhSachNhanVien[i].ngayVaoLam,
     danhSachNhanVien[i].mucLuong
@@ -349,7 +358,7 @@ function capNhatThongTinNhanVien() {
   // thay thế thông tin nhân viên đã sửa
   danhSachNhanVien[index] = nhanVienDaSua;
   // reset dữ liệu các ô input của form
-  duLieuInputNhanVien("", "", "", "", "", "", "", "");
+  duLieuInputNhanVien("", "", "", "", "", "", "", "", "");
   //lưu vào storage
   saveToStorage(danhSachNhanVien);
   renderDanhSachNhanVien();

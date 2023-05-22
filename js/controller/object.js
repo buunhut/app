@@ -14,6 +14,7 @@ function lopNhanVien(
   _tenNhanVien,
   _chucVu,
   _soDienThoai,
+  _eMail,
   _diaChi,
   _ngayVaoLam,
   _mucLuong
@@ -23,6 +24,7 @@ function lopNhanVien(
   this.tenNhanVien = _tenNhanVien;
   this.chucVu = _chucVu;
   this.soDienThoai = _soDienThoai;
+  this.eMail = _eMail;
   this.diaChi = _diaChi;
   this.ngayVaoLam = _ngayVaoLam;
   this.mucLuong = _mucLuong;
