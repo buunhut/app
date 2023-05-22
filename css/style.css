@@ -409,14 +409,16 @@ table td:last-child {
   justify-content: space-between;
 }
 .nhanVienListTitle button {
-  padding: 10px 20px;
+  width: 36px;
+  height: 36px;
   margin-right: 10px;
   color: white;
   background-color: royalblue;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .nhanVienListTitle button:hover {
   color: rgb(255, 255, 30);
@@ -568,6 +570,7 @@ form button:hover {
   text-align: center;
   line-height: 40px;
   background-color: royalblue;
+  cursor: pointer;
 }
 .nhanVienList .timNhanVien form input {
   width: 100%;
@@ -875,10 +878,11 @@ hr {
 
   /*nút thêm nhân viên */
   .nhanVienListTitle button {
-    padding: 10px;
-    margin-right: 10px;
+    width: 30px;
+    height: 30px;
     background-color: royalblue;
     border: none;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
