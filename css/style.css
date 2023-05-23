@@ -344,11 +344,11 @@ table td:last-child {
   display: none;
 }
 /* trang thêm nhân viên */
-.nhanVien {
+.main {
   display: flex;
   justify-content: space-between;
 }
-.nhanVienForm {
+.mainForm {
   padding-top: 10px;
   background-color: white;
   position: absolute;
@@ -360,29 +360,29 @@ table td:last-child {
   transition: all 0.5s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.nhanVienForm .formItem {
+.mainForm .formItem {
   display: flex;
   align-items: center;
 }
-.nhanVienForm .formItem label i {
+.mainForm .formItem label i {
   width: 40px;
   height: 40px;
   line-height: 40px;
   text-align: center;
   /* background-color: silver; */
-  margin-bottom: 10px;
+  margin-top: 8px;
   /* color: royalblue; */
   font-size: 20px;
 }
-.nhanVienFormBg,
+.mainFormBg,
 .lienHeBg {
   padding: 5px 10px;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.nhanVienFormBg form {
+.mainFormBg form {
   position: relative;
-  padding: 20px 20px 10px 10px;
+  padding: 10px 20px 10px 10px;
   overflow: hidden;
 }
 
@@ -394,21 +394,21 @@ table td:last-child {
   bottom: 0;
   z-index: -1;
   border-left: 480px solid rgba(65, 105, 225, 0.3);
-  border-bottom: 375px solid rgba(255, 0, 0, 0.3);
+  border-bottom: 420px solid rgba(255, 0, 0, 0.3);
   border-radius: 8px;
 }
-.nhanVienTableBg {
+.mainTableBg {
   padding: 5px 16px;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow-x: scroll;
 }
-.nhanVienListTitle,
-.nhanVienFormTitle {
+.mainListTitle,
+.mainFormTitle {
   display: flex;
   justify-content: space-between;
 }
-.nhanVienListTitle button {
+.mainListTitle button {
   width: 40px;
   height: 40px;
   margin-right: 10px;
@@ -420,11 +420,11 @@ table td:last-child {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-size: 18px;
 }
-.nhanVienListTitle button:hover {
+.mainListTitle button:hover {
   color: rgb(255, 255, 30);
 }
 
-.nhanVienFormTitle button {
+.mainFormTitle button {
   width: 30px;
   height: 30px;
   margin-right: 10px;
@@ -435,13 +435,21 @@ table td:last-child {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 50%;
 }
-.nhanVienFormTitle button:hover {
+.mainFormTitle button:hover {
   color: rgb(255, 255, 30);
+}
+.mainForm span{
+  color: red;
+  font-size: 12px;
+  background-color: white;
+  margin-left: 40px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  
 }
 .formButton {
   margin-top: 10px;
 }
-
 .formButton button {
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -495,7 +503,7 @@ table td:last-child {
 h2 {
   padding: 0 10px;
 }
-.nhanVienList {
+.mainList {
   width: 100%;
   padding: 0 30px;
 }
@@ -525,10 +533,10 @@ form label {
 form input,
 select {
   width: 100%;
-  margin-bottom: 10px;
   height: 40px;
   padding: 0 10px;
   font-size: 16px;
+  margin: 8px 0 2px;
 }
 form textarea {
   width: 100%;
@@ -556,13 +564,13 @@ form button:hover {
   color: rgb(255, 255, 30);
 }
 
-.nhanVienList .timNhanVien {
-  margin-top: 20px;
+.mainList .timNhanVien {
+  /* margin-top: 20px; */
   position: relative;
 }
-.nhanVienList .iconSearch{
+.mainList .iconSearch{
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   width: 40px;
   color: white;
@@ -572,10 +580,10 @@ form button:hover {
   background-color: royalblue;
   cursor: pointer;
 }
-.nhanVienList .timNhanVien form input {
+.mainList .timNhanVien form input {
   width: 100%;
   height: 40px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 0 10px 0 50px;
   font-size: 16px;
 }
@@ -596,6 +604,31 @@ form button:hover {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+/* trang tạo sản phẩm */
+#moFormTaoSanPham{
+  margin: 0 0 10px 20px;
+}
+.products{
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 0 20px
+}
+.products .productForm{
+  width: 0;
+  height: 500px;
+  /* background-color:aqua; */
+  transition: all .5s;
+  padding-right: 20px;
+
+}
+.productsList table{
+  width: 100%;
+}
+.widthHalf{
+  width: 50% !important;
+  height: 500px;
+  transition: all .5s;
 }
 
 /* trang liên hệ */
@@ -773,11 +806,11 @@ hr {
     flex-direction: column;
   }
   .nhanVien,
-  .nhanVienList {
+  .mainList {
     width: 100%;
     padding: 10px;
   }
-  .nhanVienForm {
+  .mainForm {
     max-width: 500px;
   }
 
@@ -812,12 +845,12 @@ hr {
 }
 @media screen and (max-width: 768px) {
   /* trang thêm nhân viên */
-  .nhanVienForm {
+  .mainForm {
     width: 380px;
     transform: translateX(-50%);
   }
 
-  .nhanVienFormBg form {
+  .mainFormBg form {
     position: relative;
     padding: 10px 10px 0px 0px;
     overflow: hidden;
@@ -831,7 +864,7 @@ hr {
     bottom: 0;
     z-index: -1;
     border-left: 360px solid rgba(65, 105, 225, 0.3);
-    border-bottom: 360px solid rgba(255, 0, 0, 0.3);
+    border-bottom: 410px solid rgba(255, 0, 0, 0.3);
     border-radius: 8px;
   }
 
@@ -877,7 +910,7 @@ hr {
   }
 
   /*nút thêm nhân viên */
-  .nhanVienListTitle button {
+  .mainListTitle button {
     width: 38px;
     height: 38px;
     background-color: royalblue;

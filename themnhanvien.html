@@ -25,7 +25,7 @@
     <header>
         <div class="top">
             <a href="tel:0909240886"><i class="fa-solid fa-phone"></i> 0909 240 886</a>
-            <a href="mailto:nhut.nta@gmail.com">Email: nhut.nta@gmail.com</a>
+            <a href="mailto:nhut.nta@gmail.com"><i class="fa-solid fa-envelope"></i> nhut.nta@gmail.com</a>
         </div>
         <nav>
             <div class="mainMenu">
@@ -96,7 +96,7 @@
                         <li><a href="./lienhe.html">LIÊN HỆ </a></i></li>
                         <div class="topSmall">
                             <a href="tel:0909240886"><i class="fa-solid fa-phone"></i> 0909 240 886</a>
-                            <a href="mailto:nhut.nta@gmail.com">Email: nhut.nta@gmail.com</a>
+                            <a href="mailto:nhut.nta@gmail.com"><i class="fa-solid fa-envelope"></i> nhut.nta@gmail.com</a>
                         </div>
                     </ul>
                 </div>
@@ -109,62 +109,78 @@
 
     <!-- phần main -->
     <main>
-        <div class="container nhanVien">
-            <div class="nhanVienForm">
-                <div class="nhanVienFormTitle">
+        <div class="container main">
+            <div class="mainForm">
+                <div class="mainFormTitle">
                     <h2><i class="fa-solid fa-circle-info"></i> Thông tin nhân viên</h2>
-                    <button onclick="show()"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="showThemNhanVien()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div class="nhanVienFormBg">
+                <div class="mainFormBg">
                     <form action="">
                         <!-- <label for="idNhanVien">Mã nhân viên</label> -->
                         <input type="text" id="idNhanVien" hidden>
                         <input type="text" id="maNhanVien" hidden>
+
                         <div class="formItem">
                             <label id="tbTenNV" for="tenNhanVien"><i class="fa-solid fa-user-tie"></i></label>
-                            <input type="text" id="tenNhanVien" placeholder="Họ và tên">
+                            <input type="text" value="" id="tenNhanVien" placeholder="Họ và tên" onchange="onChangeTenNhanVien()">
                         </div>
+                        <span id="tbTextTenNhanVien" class="none"></span>
+                        <div class="formItem">
+                            <label id="tbMatKhau" for="matKhau"><i class="fa-solid fa-key"></i></label>
+                            <input type="password" value="" id="matKhau" placeholder="Mật khẩu" onchange="onChangePass()">
+                        </div>
+                        <span id="tbTextMatKhau" class="none">matKhau</span>
                         <div class="formItem">
                             <label id="tbChucVu" for="chucVu">
                                 <i class="fa-solid fa-briefcase"></i>
                             </label>
-                            <select name="" id="chucVu">
+                            <select name="" id="chucVu" onchange="onChangeCheckRong('chucVu', 'tbChucVu')">
                                 <option value="">Chức vụ</option>
                                 <option value="Quản lý">Quản lý</option>
                                 <option value="Phục vụ">Phục vụ</option>
                                 <option value="Giao hàng">Giao hàng</option>
-                            </select>
+                            </select>                            
                         </div>
+                        <span id="tbTextChucVu" class="none"></span>
+
                         <div class="formItem">
                             <label id="tbSoDienThoai" for="soDienThoai">
                                 <i class="fa-solid fa-phone"></i>
                             </label>
-                            <input type="text" id="soDienThoai" placeholder="Số điện thoại">
+                            <input type="text" value="" id="soDienThoai" placeholder="Số điện thoại" onchange="onChangeSoDienThoai()">
                         </div>
+                        <span id="tbTextSoDienThoai" class="none"></span>
+
                         <div class="formItem">
                             <label id="tbEmail" for="eMail">
                                 <i class="fa-solid fa-at"></i>
                             </label>
-                            <input type="text" id="eMail" placeholder="E-mail" onchange="checkEmail()">
+                            <input type="text" id="eMail" placeholder="E-mail" onchange="onChangeEmail()">
                         </div>
+                        <span id="tbTextEmail" class="none"></span>
                         <div class="formItem">
-                            <label id="tbSoDiaChi" for="diaChi">
+                            <label id="tbDiaChi" for="diaChi">
                                 <i class="fa-solid fa-location-dot"></i>
                             </label>
-                            <input type="text" id="diaChi" placeholder="Địa chỉ">
+                            <input type="text" id="diaChi" placeholder="Địa chỉ" onchange="onChangeCheckRong('diaChi', 'tbDiaChi')">
                         </div>
+                        <span id="tbTextDiaChi" class="none"></span>
+
                         <div class="formItem">
                             <label id="tbNgayVaoLam" for="Ngày vào làm">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </label>
-                            <input type="date" id="ngayVaoLam" placeholder="Ngày vào làm">
+                            <input type="date" id="ngayVaoLam" placeholder="Ngày vào làm" onchange="onChangeCheckRong('ngayVaoLam', 'tbNgayVaoLam' )">
                         </div>
+                        <span id="tbTextNgayVaoLam" class="none"></span>
                         <div class="formItem">
                             <label id="tbMucLuong" for="mucLuong">
                                 <i class="fa-solid fa-hand-holding-dollar"></i>
                             </label>
-                            <input type="text" id="mucLuong" placeholder="Mức lương" onkeyup="dinhDangSo('mucLuong')">
+                            <input type="text" id="mucLuong" placeholder="Mức lương" onkeyup="onKeyUpDinhDangSo('mucLuong')">
                         </div>
+                        <span id="tbTextMucLuong" class="none"></span>
                         <div class="formBgStyle"></div>
                     </form>
                     <div class="formButton">
@@ -177,13 +193,13 @@
                     </div>
                 </div>
             </div>
-            <div class="nhanVienList">
-                <div class="nhanVienListTitle">
+            <div class="mainList">
+                <div class="mainListTitle">
                     <h2> <i class="fa-solid fa-users"></i> Danh sách nhân viên</h2>
-                    <button onclick="show()"><i class="fa-solid fa-plus"></i></button>
+                    <button onclick="showThemNhanVien()"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
-                <div class="nhanVienTableBg">
+                <div class="mainTableBg">
                     <div class="timNhanVien">
                         <i class="iconSearch fa-solid fa-magnifying-glass"></i>
                         <form action="">
@@ -235,6 +251,7 @@
     <script src="./js/controller/object.js"></script>
     <script src="./js/controller/helper.js"></script>
     <script src="./js/controller/validate.js"></script>
+    <script src="./js/controller/themnhanvien.js"></script>
     <script src="./js/main.js"></script>
 
 </body>
