@@ -63,6 +63,7 @@ function duLieuInputNhanVien(
   idNhanVien,
   maNhanVien,
   tenNhanVien,
+  matKhau,
   chucVu,
   soDienThoai,
   eMail,
@@ -73,6 +74,7 @@ function duLieuInputNhanVien(
   document.getElementById("idNhanVien").value = idNhanVien;
   document.getElementById("maNhanVien").value = maNhanVien;
   document.getElementById("tenNhanVien").value = tenNhanVien;
+  document.getElementById("matKhau").value = matKhau;
   document.getElementById("chucVu").value = chucVu;
   document.getElementById("soDienThoai").value = soDienThoai;
   document.getElementById("eMail").value = eMail;

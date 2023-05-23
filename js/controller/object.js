@@ -12,6 +12,7 @@ function lopNhanVien(
   _idNhanVien,
   _maNhanVien,
   _tenNhanVien,
+  _matKhau,
   _chucVu,
   _soDienThoai,
   _eMail,
@@ -22,6 +23,7 @@ function lopNhanVien(
   this.idNhanVien = _idNhanVien;
   this.maNhanVien = _maNhanVien;
   this.tenNhanVien = _tenNhanVien;
+  this.matKhau = _matKhau;
   this.chucVu = _chucVu;
   this.soDienThoai = _soDienThoai;
   this.eMail = _eMail;
