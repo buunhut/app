@@ -176,8 +176,14 @@ function showThemNhanVien() {
   document.getElementById("tbDiaChi").style.color = "black";
   document.getElementById("tbNgayVaoLam").style.color = "black";
   document.getElementById("tbMucLuong").style.color = "black";
+  document.getElementById("tbTextTenNhanVien").innerHTML = "";
+  document.getElementById("tbTextTenNhanVien").classList.add("none");
   document.getElementById("tbTextMatKhau").innerHTML = "";
   document.getElementById("tbTextMatKhau").classList.add("none");
+  document.getElementById("tbTextSoDienThoai").innerHTML = "";
+  document.getElementById("tbTextSoDienThoai").classList.add("none");
+  document.getElementById("tbTextEmail").innerHTML = "";
+  document.getElementById("tbTextEmail").classList.add("none");
   document.querySelector(".mainForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");

@@ -86,7 +86,21 @@ if(value.length > 6 && value.length <= 10
 return kq;
 }
 
-
+// onchange tên nhân viên
+function onChangeTenNhanVien(){
+  var tenNhanVien = document.getElementById("tenNhanVien").value;
+  var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+  var chiLaySo = /[0-9]/g;
+  if(tenNhanVien.match(checkKyTuDacBiet) || tenNhanVien.match(chiLaySo)){
+    document.getElementById("tbTenNV").style.color = "red";
+    document.getElementById("tbTextTenNhanVien").innerHTML = "Không được chứa ký tự đặc biệt hoặc số";
+    document.getElementById("tbTextTenNhanVien").classList.remove("none");
+  } else {
+    document.getElementById("tbTenNV").style.color = "black";
+    document.getElementById("tbTextTenNhanVien").innerHTML = "";
+    document.getElementById("tbTextTenNhanVien").classList.add("none");
+  }
+}
 // check onchange password
 function onChangePass(){
   var value = document.getElementById("matKhau").value;
@@ -119,21 +133,6 @@ function onChangeSoDienThoai(){
     document.getElementById("tbTextSoDienThoai").classList.add("none");
   }
 
-}
-// onchange tên nhân viên
-function onChangeTenNhanVien(){
-  var tenNhanVien = document.getElementById("tenNhanVien").value;
-  var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-  var chiLaySo = /[0-9]/g;
-  if(tenNhanVien.match(checkKyTuDacBiet) || tenNhanVien.match(chiLaySo)){
-    document.getElementById("tbTenNV").style.color = "red";
-    document.getElementById("tbTextTenNhanVien").innerHTML = "không được chứa ký tự đặc biệt hoặc số";
-    document.getElementById("tbTextTenNhanVien").classList.remove("none");
-  } else {
-    document.getElementById("tbTenNV").style.color = "black";
-    document.getElementById("tbTextTenNhanVien").innerHTML = "";
-    document.getElementById("tbTextTenNhanVien").classList.add("none");
-  }
 }
 // onchange email
 function onChangeEmail(){
