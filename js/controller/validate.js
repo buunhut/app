@@ -95,6 +95,10 @@ function onChangeTenNhanVien(){
     document.getElementById("tbTenNV").style.color = "red";
     document.getElementById("tbTextTenNhanVien").innerHTML = "Không được chứa ký tự đặc biệt hoặc số";
     document.getElementById("tbTextTenNhanVien").classList.remove("none");
+  } else if(tenNhanVien == ""){
+    document.getElementById("tbTenNV").style.color = "red";
+    document.getElementById("tbTextTenNhanVien").innerHTML = "Không được bỏ trống";
+    document.getElementById("tbTextTenNhanVien").classList.remove("none");
   } else {
     document.getElementById("tbTenNV").style.color = "black";
     document.getElementById("tbTextTenNhanVien").innerHTML = "";
@@ -154,12 +158,18 @@ function onChangeEmail(){
       }
 }
 // onchange rỗng
-function onChangeCheckRong(id, idTb){
+function onChangeCheckRong(id, idTb, idTbText){
   var text = document.getElementById(id).value;
   if(text == ""){
     document.getElementById(idTb).style.color = "red";
+    document.getElementById(idTbText).innerHTML = "Không được bỏ trống";
+    document.getElementById(idTbText).classList.remove("none");
+
   } else {
     document.getElementById(idTb).style.color = "black";
+    document.getElementById(idTbText).innerHTML = "";
+    document.getElementById(idTbText).classList.add("none");
+
   }
 
 }

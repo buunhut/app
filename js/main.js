@@ -180,10 +180,16 @@ function showThemNhanVien() {
   document.getElementById("tbTextTenNhanVien").classList.add("none");
   document.getElementById("tbTextMatKhau").innerHTML = "";
   document.getElementById("tbTextMatKhau").classList.add("none");
+  document.getElementById("tbTextChucVu").innerHTML = "";
+  document.getElementById("tbTextChucVu").classList.add("none");
   document.getElementById("tbTextSoDienThoai").innerHTML = "";
   document.getElementById("tbTextSoDienThoai").classList.add("none");
   document.getElementById("tbTextEmail").innerHTML = "";
   document.getElementById("tbTextEmail").classList.add("none");
+  document.getElementById("tbTextDiaChi").innerHTML = "";
+  document.getElementById("tbTextDiaChi").classList.add("none");
+  document.getElementById("tbTextNgayVaoLam").innerHTML = "";
+  document.getElementById("tbTextNgayVaoLam").classList.add("none");
   document.querySelector(".mainForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");
