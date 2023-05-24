@@ -190,6 +190,8 @@ function showThemNhanVien() {
   document.getElementById("tbTextDiaChi").classList.add("none");
   document.getElementById("tbTextNgayVaoLam").innerHTML = "";
   document.getElementById("tbTextNgayVaoLam").classList.add("none");
+  document.getElementById("tbTextMucLuong").innerHTML = "";
+  document.getElementById("tbTextMucLuong").classList.add("none");
   document.querySelector(".mainForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");
@@ -204,9 +206,9 @@ function overLay() {
 }
 
 // demo code
-var ngay = new Date().getDate();
-var thang = new Date().getMonth();
-var nam = new Date().getFullYear();
-console.log(ngay, thang, nam);
+// var ngay = new Date().getDate();
+// var thang = new Date().getMonth();
+// var nam = new Date().getFullYear();
+// console.log(ngay, thang, nam);
 // trang tạo sản phẩm
 // xử lý nút mở form tạo sản phẩm

@@ -2,7 +2,7 @@
 function checkRong(checkInput, idThongBao, idThongBaoText) {
   if (checkInput == "") {
     document.getElementById(idThongBao).style.color = "red";
-    document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dũ liệu";
+    document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dữ liệu";
     document.getElementById(idThongBaoText).classList.remove("none");
     return false;
   } else {
@@ -178,7 +178,7 @@ function onChangeCheckRong(id, idTb, idTbText) {
   var text = document.getElementById(id).value;
   if (text == "") {
     document.getElementById(idTb).style.color = "red";
-    document.getElementById(idTbText).innerHTML = "Không được bỏ trống";
+    document.getElementById(idTbText).innerHTML = "Vui lòng nhập dữ liệu";
     document.getElementById(idTbText).classList.remove("none");
   } else {
     document.getElementById(idTb).style.color = "black";
