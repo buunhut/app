@@ -48,10 +48,12 @@ function layThongTinNhanVien() {
     checkRong(diaChi, "tbDiaChi", "tbTextDiaChi") &
     checkRong(ngayVaoLam, "tbNgayVaoLam", "tbTextNgayVaoLam") &
     checkRong(mucLuong, "tbMucLuong", "tbTextMucLuong") &
-    checkKyTuChu(tenNhanVien, "tbTenNV") &
-    checkHoaDbSo(matKhau, "tbMatKhau") &
-    checkPhone(soDienThoai, "tbSoDienThoai") &
-    checkEmail(eMail, "tbEmail") 
+
+
+    checkKyTuChu(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
+    checkHoaDbSo(matKhau, "tbMatKhau", "tbTextMatKhau") &
+    checkPhone(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
+    checkEmail(eMail, "tbEmail", "tbTextEmail") 
   if (!valid) {
     return;
   }
@@ -75,17 +77,21 @@ function layThongTinNhanVien() {
 //lấy thông tin chỉnh sửa
 function layThongTinNhanVienDaSua() {
   //lấy dữ liệu từ inphut
-  var idNhanVien = document.getElementById("idNhanVien").value;
-  var maNhanVien = document.getElementById("maNhanVien").value;
-  var tenNhanVien = document.getElementById("tenNhanVien").value;
-  var matKhau = document.getElementById("matKhau").value;
-  var chucVu = document.getElementById("chucVu").value;
-  var soDienThoai = document.getElementById("soDienThoai").value;
-  var eMail = document.getElementById("eMail").value;
-  var diaChi = document.getElementById("diaChi").value;
-  var ngayVaoLam = document.getElementById("ngayVaoLam").value;
-  var mucLuong = document.getElementById("mucLuong").value;
-  if (chucVu == "Quản lý") {
+  checkRong(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
+  checkRong(matKhau, "tbMatKhau", "tbTextMatKhau") &
+  checkRong(chucVu, "tbChucVu", "tbTextChucVu") &
+  checkRong(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
+  checkRong(eMail, "tbEmail", "tbTextEmail") &
+  checkRong(diaChi, "tbDiaChi", "tbTextDiaChi") &
+  checkRong(ngayVaoLam, "tbNgayVaoLam", "tbTextNgayVaoLam") &
+  checkRong(mucLuong, "tbMucLuong", "tbTextMucLuong") &
+
+
+  checkKyTuChu(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
+  checkHoaDbSo(matKhau, "tbMatKhau", "tbTextMatKhau") &
+  checkPhone(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
+  checkEmail(eMail, "tbEmail", "tbTextEmail") 
+if (chucVu == "Quản lý") {
     var maNhanVien = "ql0" + idNhanVien;
   } else if (chucVu == "Phục vụ") {
     var maNhanVien = "pv0" + idNhanVien;
@@ -98,14 +104,14 @@ function layThongTinNhanVienDaSua() {
   var valid = true;
   valid =
     checkRong(tenNhanVien, "tbTenNV") &
+    checkKyTuChu(tenNhanVien, "tbTenNV") &
+    checkHoaDbSo(matKhau, "tbMatKhau") &
     checkRong(chucVu, "tbChucVu") &
     checkRong(soDienThoai, "tbSoDienThoai") &
     checkRong(eMail, "tbEmail") &
     checkRong(diaChi, "tbDiaChi") &
     checkRong(ngayVaoLam, "tbNgayVaoLam") &
     checkRong(mucLuong, "tbMucLuong") &
-    checkKyTuChu(tenNhanVien, "tbTenNV") &
-    checkHoaDbSo(matKhau, "tbMatKhau") &
     checkPhone(soDienThoai, "tbSoDienThoai") &
     checkEmail(eMail, "tbEmail") 
   if (!valid) {

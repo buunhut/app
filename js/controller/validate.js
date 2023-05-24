@@ -2,42 +2,38 @@
 function checkRong(checkInput, idThongBao, idThongBaoText) {
   if (checkInput == "") {
     document.getElementById(idThongBao).style.color = "red";
-    document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dữ liệu";
+    document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dũ liệu";
     document.getElementById(idThongBaoText).classList.remove("none");
     return false;
   } else {
-    document.getElementById(idThongBao).style.color = "black";
-    document.getElementById(idThongBaoText).innerHTML = "";
-    document.getElementById(idThongBaoText).classList.add("none");
     return true;
   }
 }
 
 // check số điện thoại
-function checkPhone(phone, idThongBao){
+function checkPhone(phone, idThongBao) {
   var regNumber = /^[0-9]+$/;
   var checkPhone = regNumber.test(phone);
   // console.log(checkPhone);
-  if(checkPhone == false || phone.length < 9 || phone.length > 12){
+  if (checkPhone == false || phone.length < 9 || phone.length > 12) {
     document.getElementById(idThongBao).style.color = "red";
   }
   return checkPhone;
 }
-
 
 // check email
 function checkEmail(email, idThongBao) {
   var email = document.getElementById("eMail").value;
   let pattern =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    
-    var checkEmail = pattern.test(email);
-    // console.log(checkEmail)
-    
-    if(checkEmail == false){
-      document.getElementById(idThongBao).style.color = "red";
-    }  
-    return pattern.test(email); // false
+
+  var checkEmail = pattern.test(email);
+  // console.log(checkEmail)
+
+  if (checkEmail == false) {
+    document.getElementById(idThongBao).style.color = "red";
+  }
+  return pattern.test(email); // false
 }
 
 // định dạnh number
@@ -56,6 +52,7 @@ function onKeyUpDinhDangSo(idCheck) {
     checkInput = checkInput.toString();
   }
   document.getElementById(idCheck).value = Number(checkInput).toLocaleString();
+
   document.getElementById("tbMucLuong").style.color = "black";
   document.getElementById("tbTextMucLuong").innerHTML = "";
   document.getElementById("tbTextMucLuong").classList.add("none");
@@ -63,47 +60,52 @@ function onKeyUpDinhDangSo(idCheck) {
 }
 
 // check ký tự a đến z, ko lấy số
-function checkKyTuChu(text, idThongBao){
+function checkKyTuChu(text, idThongBao, idThongBaoText) {
   var chiLayText = /^[\p{L} ]+$/u;
-  if(chiLayText.test(text) == false){
+  if (chiLayText.test(text) == false) {
     document.getElementById(idThongBao).style.color = "red";
   }
   return chiLayText.test(text);
-  }
+}
 
 // check ký tự đặc biệt + số + chữ in hoa
-function checkHoaDbSo(value, idThongBao){
-var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-var chiLaySo = /[0-9]/g;
-var checkKyTuHoa = /[A-Z]/ ;
- 
-var kq = "";
-if(value.length > 6 && value.length <= 10 
-  && value.match(checkKyTuDacBiet) && value.match(chiLaySo) 
-  && value.match(checkKyTuHoa)){
-  kq = true;
-  document.getElementById(idThongBao).style.color = "black";
+function checkHoaDbSo(value, idThongBao) {
+  var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+  var chiLaySo = /[0-9]/g;
+  var checkKyTuHoa = /[A-Z]/;
 
-} else {
-  kq = false; 
-  document.getElementById(idThongBao).style.color = "red";
-}
-// console.log(kq);
-return kq;
+  var kq = "";
+  if (
+    value.length > 6 &&
+    value.length <= 10 &&
+    value.match(checkKyTuDacBiet) &&
+    value.match(chiLaySo) &&
+    value.match(checkKyTuHoa)
+  ) {
+    kq = true;
+    document.getElementById(idThongBao).style.color = "black";
+  } else {
+    kq = false;
+    document.getElementById(idThongBao).style.color = "red";
+  }
+  // console.log(kq);
+  return kq;
 }
 
 // onchange tên nhân viên
-function onChangeTenNhanVien(){
+function onChangeTenNhanVien() {
   var tenNhanVien = document.getElementById("tenNhanVien").value;
   var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
   var chiLaySo = /[0-9]/g;
-  if(tenNhanVien.match(checkKyTuDacBiet) || tenNhanVien.match(chiLaySo)){
+  if (tenNhanVien.match(checkKyTuDacBiet) || tenNhanVien.match(chiLaySo)) {
     document.getElementById("tbTenNV").style.color = "red";
-    document.getElementById("tbTextTenNhanVien").innerHTML = "Không được chứa ký tự đặc biệt hoặc số";
+    document.getElementById("tbTextTenNhanVien").innerHTML =
+      "Không được chứa ký tự đặc biệt hoặc số";
     document.getElementById("tbTextTenNhanVien").classList.remove("none");
-  } else if(tenNhanVien == ""){
+  } else if (tenNhanVien == "") {
     document.getElementById("tbTenNV").style.color = "red";
-    document.getElementById("tbTextTenNhanVien").innerHTML = "Không được bỏ trống";
+    document.getElementById("tbTextTenNhanVien").innerHTML =
+      "Vui lòng nhập dữ liệu";
     document.getElementById("tbTextTenNhanVien").classList.remove("none");
   } else {
     document.getElementById("tbTenNV").style.color = "black";
@@ -112,70 +114,77 @@ function onChangeTenNhanVien(){
   }
 }
 // check onchange password
-function onChangePass(){
+function onChangePass() {
   var value = document.getElementById("matKhau").value;
   var checkKyTuDacBiet = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
   var chiLaySo = /[0-9]/g;
-  var checkKyTuHoa = /[A-Z]/ ;
-   
-  if(value.length >= 6 && value.length <= 10 && value.match(checkKyTuDacBiet) && value.match(chiLaySo) && value.match(checkKyTuHoa)){
+  var checkKyTuHoa = /[A-Z]/;
+
+  if (
+    value.length >= 6 &&
+    value.length <= 10 &&
+    value.match(checkKyTuDacBiet) &&
+    value.match(chiLaySo) &&
+    value.match(checkKyTuHoa)
+  ) {
     document.getElementById("tbMatKhau").style.color = "black";
     document.getElementById("tbTextMatKhau").innerHTML = "";
     document.getElementById("tbTextMatKhau").classList.add("none");
   } else {
     document.getElementById("tbMatKhau").style.color = "red";
-    document.getElementById("tbTextMatKhau").innerHTML = "Ít nhất 6 ký tự, gồm ký tự hoa và ký tự đặc biệt";
+    document.getElementById("tbTextMatKhau").innerHTML =
+      "Ít nhất 6 ký tự, gồm ký tự hoa và ký tự đặc biệt";
     document.getElementById("tbTextMatKhau").classList.remove("none");
-    }
+  }
 }
 // onchange số điện thoại
-function onChangeSoDienThoai(){
+function onChangeSoDienThoai() {
   var phone = document.getElementById("soDienThoai").value;
   var regNumber = /^[0-9]+$/;
   var checkPhone = regNumber.test(phone);
-  if(checkPhone == false || phone.length < 9 || phone.length > 11){
+  if (checkPhone == false || phone.length < 9 || phone.length > 11) {
     document.getElementById("tbSoDienThoai").style.color = "red";
-    document.getElementById("tbTextSoDienThoai").innerHTML = "Chỉ chứa 9 - 11 ký tự số";
+    document.getElementById("tbTextSoDienThoai").innerHTML =
+      "Chỉ chứa 9 - 11 ký tự số";
     document.getElementById("tbTextSoDienThoai").classList.remove("none");
   } else {
     document.getElementById("tbSoDienThoai").style.color = "black";
     document.getElementById("tbTextSoDienThoai").innerHTML = "";
     document.getElementById("tbTextSoDienThoai").classList.add("none");
   }
-
 }
 // onchange email
-function onChangeEmail(){
+function onChangeEmail() {
   var email = document.getElementById("eMail").value;
   let pattern =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    
-    var checkEmail = pattern.test(email);
-    // console.log(checkEmail)
-    
-    if(checkEmail == false){
-      document.getElementById("tbEmail").style.color = "red";
-      document.getElementById("tbTextEmail").innerHTML = "Địa chỉ Email không hợp lệ";
-      document.getElementById("tbTextEmail").classList.remove("none");
-      } else {
-        document.getElementById("tbEmail").style.color = "black";
-        document.getElementById("tbTextEmail").innerHTML = "";
-        document.getElementById("tbTextEmail").classList.add("none");
-      }
+
+  var checkEmail = pattern.test(email);
+  // console.log(checkEmail)
+
+  if (checkEmail == false) {
+    document.getElementById("tbEmail").style.color = "red";
+    document.getElementById("tbTextEmail").innerHTML =
+      "Địa chỉ Email không hợp lệ";
+    document.getElementById("tbTextEmail").classList.remove("none");
+  } else {
+    document.getElementById("tbEmail").style.color = "black";
+    document.getElementById("tbTextEmail").innerHTML = "";
+    document.getElementById("tbTextEmail").classList.add("none");
+  }
 }
 // onchange rỗng
-function onChangeCheckRong(id, idTb, idTbText){
+function onChangeCheckRong(id, idTb, idTbText) {
   var text = document.getElementById(id).value;
-  if(text == ""){
+  if (text == "") {
     document.getElementById(idTb).style.color = "red";
     document.getElementById(idTbText).innerHTML = "Không được bỏ trống";
     document.getElementById(idTbText).classList.remove("none");
-
   } else {
     document.getElementById(idTb).style.color = "black";
     document.getElementById(idTbText).innerHTML = "";
     document.getElementById(idTbText).classList.add("none");
-
   }
-
 }
+
+
