@@ -40,15 +40,16 @@ function layThongTinNhanVien() {
   //check validate
   var valid = true;
   valid =
-    checkRong(tenNhanVien, "tbTenNV") &
+    checkRong(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
+    checkRong(matKhau, "tbMatKhau", "tbTextMatKhau") &
+    checkRong(chucVu, "tbChucVu", "tbTextChucVu") &
+    checkRong(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
+    checkRong(eMail, "tbEmail", "tbTextEmail") &
+    checkRong(diaChi, "tbDiaChi", "tbTextDiaChi") &
+    checkRong(ngayVaoLam, "tbNgayVaoLam", "tbTextNgayVaoLam") &
+    checkRong(mucLuong, "tbMucLuong", "tbTextMucLuong") &
     checkKyTuChu(tenNhanVien, "tbTenNV") &
     checkHoaDbSo(matKhau, "tbMatKhau") &
-    checkRong(chucVu, "tbChucVu") &
-    checkRong(soDienThoai, "tbSoDienThoai") &
-    checkRong(eMail, "tbEmail") &
-    checkRong(diaChi, "tbDiaChi") &
-    checkRong(ngayVaoLam, "tbNgayVaoLam") &
-    checkRong(mucLuong, "tbMucLuong") &
     checkPhone(soDienThoai, "tbSoDienThoai") &
     checkEmail(eMail, "tbEmail") 
   if (!valid) {
@@ -97,14 +98,14 @@ function layThongTinNhanVienDaSua() {
   var valid = true;
   valid =
     checkRong(tenNhanVien, "tbTenNV") &
-    checkKyTuChu(tenNhanVien, "tbTenNV") &
-    checkHoaDbSo(matKhau, "tbMatKhau") &
     checkRong(chucVu, "tbChucVu") &
     checkRong(soDienThoai, "tbSoDienThoai") &
     checkRong(eMail, "tbEmail") &
     checkRong(diaChi, "tbDiaChi") &
     checkRong(ngayVaoLam, "tbNgayVaoLam") &
     checkRong(mucLuong, "tbMucLuong") &
+    checkKyTuChu(tenNhanVien, "tbTenNV") &
+    checkHoaDbSo(matKhau, "tbMatKhau") &
     checkPhone(soDienThoai, "tbSoDienThoai") &
     checkEmail(eMail, "tbEmail") 
   if (!valid) {

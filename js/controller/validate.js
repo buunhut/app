@@ -1,10 +1,14 @@
 //check rỗng
-function checkRong(checkInput, idThongBao) {
+function checkRong(checkInput, idThongBao, idThongBaoText) {
   if (checkInput == "") {
     document.getElementById(idThongBao).style.color = "red";
+    document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dữ liệu";
+    document.getElementById(idThongBaoText).classList.remove("none");
     return false;
   } else {
     document.getElementById(idThongBao).style.color = "black";
+    document.getElementById(idThongBaoText).innerHTML = "";
+    document.getElementById(idThongBaoText).classList.add("none");
     return true;
   }
 }
@@ -53,6 +57,8 @@ function onKeyUpDinhDangSo(idCheck) {
   }
   document.getElementById(idCheck).value = Number(checkInput).toLocaleString();
   document.getElementById("tbMucLuong").style.color = "black";
+  document.getElementById("tbTextMucLuong").innerHTML = "";
+  document.getElementById("tbTextMucLuong").classList.add("none");
   return checkInput;
 }
 
