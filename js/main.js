@@ -203,6 +203,10 @@ function overLay() {
   duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "", "");
 }
 
-
+// demo code
+var ngay = new Date().getDate();
+var thang = new Date().getMonth();
+var nam = new Date().getFullYear();
+console.log(ngay, thang, nam);
 // trang tạo sản phẩm
 // xử lý nút mở form tạo sản phẩm

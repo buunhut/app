@@ -394,7 +394,7 @@ table td:last-child {
   bottom: 0;
   z-index: -1;
   border-left: 480px solid rgba(65, 105, 225, 0.3);
-  border-bottom: 420px solid rgba(255, 0, 0, 0.3);
+  border-bottom: 400px solid rgba(255, 0, 0, 0.3);
   border-radius: 8px;
 }
 .mainTableBg {
@@ -864,7 +864,7 @@ hr {
     bottom: 0;
     z-index: -1;
     border-left: 360px solid rgba(65, 105, 225, 0.3);
-    border-bottom: 410px solid rgba(255, 0, 0, 0.3);
+    border-bottom: 390px solid rgba(255, 0, 0, 0.3);
     border-radius: 8px;
   }
 
