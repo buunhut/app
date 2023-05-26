@@ -178,7 +178,7 @@
                             <label id="tbMucLuong" for="mucLuong">
                                 <i class="fa-solid fa-hand-holding-dollar"></i>
                             </label>
-                            <input type="text" id="mucLuong" placeholder="Mức lương" onkeyup="onKeyUpDinhDangSo('mucLuong')">
+                            <input type="text" id="mucLuong" placeholder="Mức lương" onchange="onChangeMucLuong('tbMucLuong','tbTextMucLuong')" onkeyup="onKeyUpDinhDangSo('mucLuong')">
                         </div>
                         <span id="tbTextMucLuong" class="none"></span>
                         <div class="formBgStyle"></div>
@@ -189,7 +189,7 @@
                         <button class="capNhatThongTinNhanVien none" type="button"
                             onclick="capNhatThongTinNhanVien()"><i class="fa-solid fa-floppy-disk"></i> Cập
                             nhật</button>
-                        <button class="xoahanVien none" type="button" onclick="xoaNhanVien()">Xóa nhân viên</button>
+                        <div id="tbAction" class="tbAction"></div>
                     </div>
                 </div>
             </div>

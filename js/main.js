@@ -196,6 +196,8 @@ function showThemNhanVien() {
   document.querySelector(".overlay").classList.toggle("visibility");
   document.querySelector(".themNhanVien").classList.remove("none");
   document.querySelector(".capNhatThongTinNhanVien").classList.add("none");
+  document.getElementById("tbAction").innerHTML = "";
+
 }
 
 //  nút overlay
@@ -203,6 +205,8 @@ function overLay() {
   document.querySelector(".mainForm").classList.toggle("show");
   document.querySelector(".overlay").classList.toggle("visibility");
   duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "", "");
+  document.getElementById("tbAction").innerHTML = "";
+
 }
 
 // demo code

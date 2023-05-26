@@ -449,6 +449,9 @@ table td:last-child {
 }
 .formButton {
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
 }
 .formButton button {
   padding: 10px 20px;
@@ -462,6 +465,15 @@ table td:last-child {
 }
 .formButton button:hover {
   color: rgb(255, 255, 30);
+}
+
+.formButton .tbAction{
+  color: royalblue;
+}
+.formButton .tbAction h3{
+  text-align: center;
+  margin: 12px 20px 0 0;
+  font-size: 15px;
 }
 
 .tblMaNhanVien {
