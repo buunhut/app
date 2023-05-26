@@ -33,7 +33,7 @@ function checkEmail(email, idThongBao) {
   if (checkEmail == false) {
     document.getElementById(idThongBao).style.color = "red";
   }
-  return pattern.test(email); // false
+  return false; // false
 }
 
 // định dạnh number
@@ -51,6 +51,7 @@ function onKeyUpDinhDangSo(idCheck) {
     });
     checkInput = checkInput.toString();
   }
+  
   document.getElementById(idCheck).value = Number(checkInput).toLocaleString();
 
   document.getElementById("tbMucLuong").style.color = "black";
@@ -65,7 +66,7 @@ function checkKyTuChu(text, idThongBao, idThongBaoText) {
   if (chiLayText.test(text) == false) {
     document.getElementById(idThongBao).style.color = "red";
   }
-  return chiLayText.test(text);
+  return false;
 }
 
 // check ký tự đặc biệt + số + chữ in hoa
@@ -186,5 +187,38 @@ function onChangeCheckRong(id, idTb, idTbText) {
     document.getElementById(idTbText).classList.add("none");
   }
 }
+// check luong
+function checkLuong(luong, idTb, idTbText){
+  if(luong.replaceAll(",", "") >= 1000000 && luong.replaceAll(",", "") <= 20000000){
+    document.getElementById(idTb).style.color = "black";
+    document.getElementById(idTbText).innerHTML = "";
+    document.getElementById(idTbText).classList.add("none");
+    return true;
+  } else {
+    document.getElementById(idTb).style.color = "red";
+    document.getElementById(idTbText).innerHTML = "Lương từ 1 triệu đến 20 triệu";
+    document.getElementById(idTbText).classList.remove("none");
+    return false;
+    
+  }
+}
+// onchang mức luong
+function onChangeMucLuong(idTb, idTbText){
+  var luong = document.getElementById("mucLuong").value;
+  if(luong.replaceAll(",", "") >= 1000000 && luong.replaceAll(",", "") <= 20000000){
+    document.getElementById(idTb).style.color = "black";
+    document.getElementById(idTbText).innerHTML = "";
+    document.getElementById(idTbText).classList.add("none");
+    return true;
+  } else {
+    document.getElementById(idTb).style.color = "red";
+    document.getElementById(idTbText).innerHTML = "Lương từ 1 triệu đến 20 triệu";
+    document.getElementById(idTbText).classList.remove("none");
+    return false;
+    
+  }
+}
+
+
 
 
