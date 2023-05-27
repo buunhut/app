@@ -133,7 +133,10 @@ function checkEmail(id, idThongBao, idThongBaoText) {
 
 // // check luong
 function checkLuong(id, idThongBao, idThongBaoText) {
-  var luong = document.getElementById(id).value;
+  var text = document.getElementById(id).value;
+  var luong = text.replaceAll(/[.,]/g, '');
+  var luong = text.replaceAll(/[.,]/g, '');
+
   if (luong == "") {
     document.getElementById(idThongBao).style.color = "red";
     document.getElementById(idThongBaoText).innerHTML = "Vui lòng nhập dữ liệu";
@@ -141,8 +144,8 @@ function checkLuong(id, idThongBao, idThongBaoText) {
     return false;
   } else {
     if (
-      luong.replaceAll(",", "") >= 1000000 &&
-      luong.replaceAll(",", "") <= 20000000
+      luong >= 1000000 &&
+      luong <= 20000000
     ) {
       document.getElementById(idThongBao).style.color = "black";
       document.getElementById(idThongBaoText).innerHTML = "";
@@ -179,7 +182,6 @@ function onKeyUpDinhDangSo(idCheck) {
 
 
 // demo
- var noSpace = /^\d+$/;
- var text = "123412 55";
- var kq = noSpace.test(text);
- console.log(kq);
+text = "10.000.0000.000";
+var luong = text.replaceAll(/[.,]/g, '');
+console.log(luong);
