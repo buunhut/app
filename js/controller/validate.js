@@ -165,7 +165,6 @@ function onKeyUpDinhDangSo(idCheck) {
   var chiLaySo = /[0-9]/g;
   var number = "";
   var checkInput = n.match(chiLaySo);
-  // console.log(checkInput);
   if (checkInput) {
     checkInput.forEach(function (item) {
       number += item;
@@ -175,8 +174,5 @@ function onKeyUpDinhDangSo(idCheck) {
   }
 
   document.getElementById(idCheck).value = Number(checkInput).toLocaleString();
-  document.getElementById("tbMucLuong").style.color = "black";
-  document.getElementById("tbTextMucLuong").innerHTML = "";
-  document.getElementById("tbTextMucLuong").classList.add("none");
   return checkInput;
 }
