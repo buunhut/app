@@ -40,26 +40,18 @@ function layThongTinNhanVien() {
   //check validate
   var valid = true;
   valid =
-    checkRong(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") 
-    checkRong(matKhau, "tbMatKhau", "tbTextMatKhau") &
-    checkRong(chucVu, "tbChucVu", "tbTextChucVu") &
-    checkRong(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
-    checkRong(eMail, "tbEmail", "tbTextEmail") &
-    checkRong(diaChi, "tbDiaChi", "tbTextDiaChi") &
-    checkRong(ngayVaoLam, "tbNgayVaoLam", "tbTextNgayVaoLam")
-    valid =
-    checkRong(mucLuong, "tbMucLuong", "tbTextMucLuong") 
-    && checkLuong(mucLuong, "tbMucLuong", "tbTextMucLuong");
-
-    // valid &&= 
-    // checkKyTuChu(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
-    // checkHoaDbSo(matKhau, "tbMatKhau", "tbTextMatKhau") &
-    // checkPhone(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
-    // checkEmail(eMail, "tbEmail", "tbTextEmail")
-    // & checkLuong(mucLuong, "tbMucLuong", "tbTextMucLuong");
+    checkTen("tenNhanVien", "tbTenNV", "tbTextTenNhanVien") &
+    checkPass("matKhau", "tbMatKhau", "tbTextMatKhau") &
+    checkRong("chucVu", "tbChucVu", "tbTextChucVu") &
+    checkPhone("soDienThoai", "tbSoDienThoai", "tbTextSoDienThoai") &
+    checkEmail("eMail", "tbEmail", "tbTextEmail") &
+    checkRong("diaChi", "tbDiaChi", "tbTextDiaChi") &
+    checkRong("ngayVaoLam", "tbNgayVaoLam", "tbTextNgayVaoLam") &
+    checkLuong("mucLuong", "tbMucLuong", "tbTextMucLuong");
 
   if (!valid) {
-    document.getElementById("tbAction").innerHTML = "<h3 style='color:red;'>Lỗi rồi bạn ơi :(</h3>"
+    document.getElementById("tbAction").innerHTML =
+      "<h3 style='color:red;'>Lỗi rồi bạn ơi :(</h3>";
     return;
   }
 
@@ -104,52 +96,40 @@ function layThongTinNhanVienDaSua() {
   //check validate
   var valid = true;
   valid =
-    checkRong(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") 
-    checkRong(matKhau, "tbMatKhau", "tbTextMatKhau") &
-    checkRong(chucVu, "tbChucVu", "tbTextChucVu") &
-    checkRong(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
-    checkRong(eMail, "tbEmail", "tbTextEmail") &
-    checkRong(diaChi, "tbDiaChi", "tbTextDiaChi") &
-    checkRong(ngayVaoLam, "tbNgayVaoLam", "tbTextNgayVaoLam")
-    valid =
-    checkRong(mucLuong, "tbMucLuong", "tbTextMucLuong") 
-    && checkLuong(mucLuong, "tbMucLuong", "tbTextMucLuong");
-
-    // valid &&= 
-    // checkKyTuChu(tenNhanVien, "tbTenNV", "tbTextTenNhanVien") &
-    // checkHoaDbSo(matKhau, "tbMatKhau", "tbTextMatKhau") &
-    // checkPhone(soDienThoai, "tbSoDienThoai", "tbTextSoDienThoai") &
-    // checkEmail(eMail, "tbEmail", "tbTextEmail")
-    // & checkLuong(mucLuong, "tbMucLuong", "tbTextMucLuong");
+    checkTen("tenNhanVien", "tbTenNV", "tbTextTenNhanVien") &
+    checkPass("matKhau", "tbMatKhau", "tbTextMatKhau") &
+    checkRong("chucVu", "tbChucVu", "tbTextChucVu") &
+    checkPhone("soDienThoai", "tbSoDienThoai", "tbTextSoDienThoai") &
+    checkEmail("eMail", "tbEmail", "tbTextEmail") &
+    checkRong("diaChi", "tbDiaChi", "tbTextDiaChi") &
+    checkRong("ngayVaoLam", "tbNgayVaoLam", "tbTextNgayVaoLam") &
+    checkLuong("mucLuong", "tbMucLuong", "tbTextMucLuong");
 
   if (!valid) {
-    document.getElementById("tbAction").innerHTML = "<h3 style='color:red;'>Lỗi rồi bạn ơi :(</h3>"
-    return;
+    document.getElementById("tbAction").innerHTML =
+      "<h3 style='color:red;'>Lỗi rồi bạn ơi :(</h3>";
+    return (nhanVienDaSua = null);
+  } else {
+    //tạo ra các lớp object nhân viên, truyền giá trị lấy đc vào
+    var nhanVienDaSua = new lopNhanVien(
+      idNhanVien,
+      maNhanVien,
+      tenNhanVien,
+      matKhau,
+      chucVu,
+      soDienThoai,
+      eMail,
+      diaChi,
+      ngayVaoLam,
+      mucLuong
+    );
+    return nhanVienDaSua;
   }
-
-  //tạo ra các lớp object nhân viên, truyền giá trị lấy đc vào
-  var nhanVien = new lopNhanVien(
-    idNhanVien,
-    maNhanVien,
-    tenNhanVien,
-    matKhau,
-    chucVu,
-    soDienThoai,
-    eMail,
-    diaChi,
-    ngayVaoLam,
-    mucLuong
-  );
-  return nhanVien;
 }
-
 
 //chức năng thêm nhân viên
 function themNhanVien() {
   document.querySelector(".capNhatThongTinNhanVien").classList.add("none");
-  // document.querySelector(".themNhanVien").classList.remove("none");
-  // document.querySelector(".mainForm").classList.toggle("show");
-  // document.querySelector(".overlay").classList.toggle("visibility");
 
   // lấy thông tin nhân viên được nhập từ ô input
   var nhanVien = layThongTinNhanVien();
@@ -169,7 +149,8 @@ function themNhanVien() {
     duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "");
 
     //thông báo
-    document.getElementById("tbAction").innerHTML = "<h3>Thêm thành công :)</h3>"
+    document.getElementById("tbAction").innerHTML =
+      "<h3>Thêm thành công :)</h3>";
   }
 }
 
@@ -200,21 +181,28 @@ function suaNhanVien(idNhanVien) {
 // chức năng cập nhật thông tin nhân viên
 function capNhatThongTinNhanVien() {
   document.querySelector(".themNhanVien").classList.add("none");
-  // document.querySelector(".capNhatThongTinNhanVien").classList.toggle("none");
-  // document.querySelector(".mainForm").classList.toggle("show");
-  // document.querySelector(".overlay").classList.toggle("visibility");
   nhanVienDaSua = layThongTinNhanVienDaSua();
-  // tìm vị trí nhân viên cần sửa
-  var index = timViTri(nhanVienDaSua.idNhanVien);
-  // thay thế thông tin nhân viên đã sửa
-  danhSachNhanVien[index] = nhanVienDaSua;
-  // reset dữ liệu các ô input của form
-  duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "");
-  document.getElementById("tbAction").innerHTML = "<h3>Cập nhật thành công :)</h3>";
 
-  //lưu vào storage
-  saveToStorage(danhSachNhanVien);
-  renderDanhSachNhanVien();
+  // chỉnh sửa thông tin lỗi, xuất thông báo
+  if (nhanVienDaSua == null) {
+    document.getElementById("tbAction").innerHTML =
+      "<h3 style='color:red'>Lỗi rồi bạn ơi :(</h3>";
+    return;
+  } else {
+    // tìm vị trí nhân viên cần sửa
+    var index = timViTri(nhanVienDaSua.idNhanVien);
+    
+    // thay thế thông tin nhân viên đã sửa
+    danhSachNhanVien[index] = nhanVienDaSua;
+    // reset dữ liệu các ô input của form
+    duLieuInputNhanVien("", "", "", "", "", "", "", "", "", "");
+    document.getElementById("tbAction").innerHTML =
+      "<h3>Cập nhật thành công :)</h3>";
+
+    //lưu vào storage
+    saveToStorage(danhSachNhanVien);
+    renderDanhSachNhanVien();
+  }
 }
 
 // chức năng xóa nhân viên
