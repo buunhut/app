@@ -72,7 +72,7 @@ function checkPass(id, idThongBao, idThongBaoText) {
     } else {
       document.getElementById("tbMatKhau").style.color = "red";
       document.getElementById("tbTextMatKhau").innerHTML =
-        "Chứa 6 - 20 ký tự, gồm ký tự hoa và ký tự đặc biệt";
+        "Chứa 6 - 20 ký tự, gồm ký tự hoa, số và ký tự đặc biệt";
       document.getElementById("tbTextMatKhau").classList.remove("none");
       return false;
     }
