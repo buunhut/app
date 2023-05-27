@@ -123,19 +123,19 @@
 
                         <div class="formItem">
                             <label id="tbTenNV" for="tenNhanVien"><i class="fa-solid fa-user-tie"></i></label>
-                            <input type="text" value="" id="tenNhanVien" placeholder="Họ và tên" onchange="checkTen('tenNhanVien', 'tbTenNV' , 'tbTextTenNhanVien')">
+                            <input type="text" value="" id="tenNhanVien" placeholder="Họ và tên" onblur="checkTen('tenNhanVien', 'tbTenNV' , 'tbTextTenNhanVien')">
                         </div>
                         <span id="tbTextTenNhanVien" class="none"></span>
                         <div class="formItem">
                             <label id="tbMatKhau" for="matKhau"><i class="fa-solid fa-key"></i></label>
-                            <input type="text" value="" id="matKhau" placeholder="Mật khẩu" onchange="checkPass('matKhau', 'tbMatKhau', 'tbTextMatKhau')">
+                            <input type="text" value="" id="matKhau" placeholder="Mật khẩu" onblur="checkPass('matKhau', 'tbMatKhau', 'tbTextMatKhau')">
                         </div>
                         <span id="tbTextMatKhau" class="none">matKhau</span>
                         <div class="formItem">
                             <label id="tbChucVu" for="chucVu">
                                 <i class="fa-solid fa-briefcase"></i>
                             </label>
-                            <select name="" id="chucVu" onchange="checkRong('chucVu', 'tbChucVu', 'tbTextChucVu')">
+                            <select name="" id="chucVu" onblur="checkRong('chucVu', 'tbChucVu', 'tbTextChucVu')">
                                 <option value="">Chức vụ</option>
                                 <option value="Quản lý">Quản lý</option>
                                 <option value="Phục vụ">Phục vụ</option>
@@ -148,7 +148,7 @@
                             <label id="tbSoDienThoai" for="soDienThoai">
                                 <i class="fa-solid fa-phone"></i>
                             </label>
-                            <input type="text" value="" id="soDienThoai" placeholder="Số điện thoại" onchange="checkPhone('soDienThoai', 'tbSoDienThoai', 'tbTextSoDienThoai')">
+                            <input type="text" value="" id="soDienThoai" placeholder="Số điện thoại" onblur="checkPhone('soDienThoai', 'tbSoDienThoai', 'tbTextSoDienThoai')">
                         </div>
                         <span id="tbTextSoDienThoai" class="none"></span>
 
@@ -156,14 +156,14 @@
                             <label id="tbEmail" for="eMail">
                                 <i class="fa-solid fa-at"></i>
                             </label>
-                            <input type="text" id="eMail" placeholder="E-mail" onchange="checkEmail('eMail', 'tbEmail', 'tbTextEmail')">
+                            <input type="text" id="eMail" placeholder="E-mail" onblur="checkEmail('eMail', 'tbEmail', 'tbTextEmail')">
                         </div>
                         <span id="tbTextEmail" class="none"></span>
                         <div class="formItem">
                             <label id="tbDiaChi" for="diaChi">
                                 <i class="fa-solid fa-location-dot"></i>
                             </label>
-                            <input type="text" id="diaChi" placeholder="Địa chỉ" onchange="checkRong('diaChi', 'tbDiaChi', 'tbTextDiaChi')">
+                            <input type="text" id="diaChi" placeholder="Địa chỉ" onblur="checkRong('diaChi', 'tbDiaChi', 'tbTextDiaChi')">
                         </div>
                         <span id="tbTextDiaChi" class="none"></span>
 
@@ -171,14 +171,14 @@
                             <label id="tbNgayVaoLam" for="Ngày vào làm">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </label>
-                            <input type="date" id="ngayVaoLam" placeholder="Ngày vào làm" onchange="checkRong('ngayVaoLam', 'tbNgayVaoLam', 'tbTextNgayVaoLam')">
+                            <input type="date" id="ngayVaoLam" placeholder="Ngày vào làm" onblur="checkRong('ngayVaoLam', 'tbNgayVaoLam', 'tbTextNgayVaoLam')">
                         </div>
                         <span id="tbTextNgayVaoLam" class="none"></span>
                         <div class="formItem">
                             <label id="tbMucLuong" for="mucLuong">
                                 <i class="fa-solid fa-hand-holding-dollar"></i>
                             </label>
-                            <input type="text" id="mucLuong" placeholder="Mức lương" onchange="checkLuong('mucLuong', 'tbMucLuong','tbTextMucLuong')" onkeyup="onKeyUpDinhDangSo('mucLuong')">
+                            <input type="text" id="mucLuong" placeholder="Mức lương" onblur="checkLuong('mucLuong', 'tbMucLuong','tbTextMucLuong')" onkeyup="onKeyUpDinhDangSo('mucLuong')">
                         </div>
                         <span id="tbTextMucLuong" class="none"></span>
                         <div class="formBgStyle"></div>
