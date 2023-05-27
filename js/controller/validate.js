@@ -60,7 +60,7 @@ function checkPass(id, idThongBao, idThongBaoText) {
     var checkKyTuHoa = /[A-Z]/;
     if (
       value.length >= 6 &&
-      value.length <= 10 &&
+      value.length <= 20 &&
       value.match(checkKyTuDacBiet) &&
       value.match(chiLaySo) &&
       value.match(checkKyTuHoa)
@@ -72,7 +72,7 @@ function checkPass(id, idThongBao, idThongBaoText) {
     } else {
       document.getElementById("tbMatKhau").style.color = "red";
       document.getElementById("tbTextMatKhau").innerHTML =
-        "Ít nhất 6 ký tự, gồm ký tự hoa và ký tự đặc biệt";
+        "Chứa 6 - 20 ký tự, gồm ký tự hoa và ký tự đặc biệt";
       document.getElementById("tbTextMatKhau").classList.remove("none");
       return false;
     }
@@ -176,3 +176,10 @@ function onKeyUpDinhDangSo(idCheck) {
   document.getElementById(idCheck).value = Number(checkInput).toLocaleString();
   return checkInput;
 }
+
+
+// demo
+ var noSpace = /^\d+$/;
+ var text = "123412 55";
+ var kq = noSpace.test(text);
+ console.log(kq);
