@@ -91,7 +91,7 @@ function checkPhone(id, idThongBao, idThongBaoText) {
     var regNumber = /^[0-9]+$/;
     var checkPhone = regNumber.test(phone);
     // console.log(checkPhone);
-    if (checkPhone == false || phone.length < 9 || phone.length > 12) {
+    if (checkPhone == false || phone.length < 9 || phone.length >= 12) {
       document.getElementById(idThongBao).style.color = "red";
       document.getElementById(idThongBaoText).innerHTML = "Chỉ chứa 9 - 11 ký tự số";
       document.getElementById(idThongBaoText).classList.remove("none");
@@ -182,6 +182,3 @@ function onKeyUpDinhDangSo(idCheck) {
 
 
 // demo
-text = "10.000.0000.000";
-var luong = text.replaceAll(/[.,]/g, '');
-console.log(luong);
